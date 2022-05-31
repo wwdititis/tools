@@ -57,7 +57,7 @@ main {
 
 .toaster {
   position: absolute;
-  top: 10%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, 0);
   pointer-events: none;
@@ -113,8 +113,8 @@ main {
   align-items: center;
   justify-content: center;
 
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
 
   user-select: none;
 }
