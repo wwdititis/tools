@@ -42,7 +42,7 @@ const showMessage = (message) => {
 
   document.querySelector('.toaster ul').prepend(toast);
 
-  setTimeout(() => toast.classList.add('fade'), 1000);
+  setTimeout(() => toast.classList.add('fade'), 2000);
 
   toast.addEventListener('transitionend', (event) => event.target.remove());
 }
@@ -158,7 +158,7 @@ const onKeyDown = (key) => {
 
   if (key === ENTER_KEY) {
     if (currentWord.length < 5) {
-      showMessage('You\'re missing a few letters, don\'t you think?');
+      showMessage('Ye\'re missin\' a few letters, mate...');
       return;
     }
 
@@ -166,7 +166,7 @@ const onKeyDown = (key) => {
       checkGuess(currentWord, WORD_OF_THE_DAY);
     } else {
       currentRow.setAttribute('data-animation', 'invalid');
-      showMessage('That\'s not even a real word, is it?');
+      showMessage('That\'s not a relevant word in the OFMD universe...');
     }
 
     return;
