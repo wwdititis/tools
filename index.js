@@ -3,17 +3,8 @@
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
 const WORD_LIST = [
-  'HELLO', 'PASTA', 'PANIC',
-  'SKILL', 'ARROW', 'BIRDS',
-  'FRUIT', 'PIZZA', 'SHAKE',
-  'THOSE', 'SUPER', 'SHARE',
-  'LOVES', 'WATER', 'VALUE',
-  'VALID', 'SWEET', 'START',
-  'SPACE', 'SLEEP', 'MAGIC',
-  'LEARN', 'LIGHT', 'LOGIC',
-  'HAPPY', 'HUMAN', 'GRAND',
-  'FOCUS', 'ENJOY', 'DREAM',
-  'CLEAN', 'CLEAR', 'WORDS',
+  'SHIPS', 'BLACK', 'FLAGS',
+  'BOATS', 'RAIDS', 'WATER',
 ];
 const WORD_OF_THE_DAY = WORD_LIST[getRandomIndex(WORD_LIST.length)];
 
@@ -50,7 +41,7 @@ const showMessage = (message) => {
   toast.className = 'toast';
 
   document.querySelector('.toaster ul').prepend(toast);
-  
+
   setTimeout(() => toast.classList.add('fade'), 1000);
 
   toast.addEventListener('transitionend', (event) => event.target.remove());
@@ -85,7 +76,7 @@ const checkGuess = (guess, word) => {
       document
         .querySelector(`[data-key='${letter}']`)
         .setAttribute('data-status', 'valid');
-      
+
         remainingWordLetters.push(false);
         remainingGuessLetters.push(false);
     } else {
@@ -105,7 +96,7 @@ const checkGuess = (guess, word) => {
         .querySelector(`li:nth-child(${remainingGuessLetters.indexOf(letter) + 1})`);
 
       column.setAttribute('data-status', 'invalid');
-      
+
       const keyboardKey = document.querySelector(`[data-key='${letter}']`);
 
       if (keyboardKey.getAttribute('data-status') !== 'valid') {
@@ -118,7 +109,7 @@ const checkGuess = (guess, word) => {
   // that are absent from the word.
   guessLetters.forEach(letter => {
     const keyboardKey = document.querySelector(`[data-key='${letter}']`);
-    
+
     if (keyboardKey.getAttribute('data-status') === 'empty') {
       keyboardKey.setAttribute('data-status', 'none');
     }
@@ -158,10 +149,10 @@ const onKeyDown = (key) => {
     // Clear the column of its content
     targetColumn.textContent = '';
     targetColumn.setAttribute('data-status', 'empty');
-    
+
     // Remove the last letter from the currentWord
     currentWord = currentWord.slice(0, -1);
-    
+
     return;
   }
 
