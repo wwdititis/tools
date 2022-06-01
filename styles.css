@@ -225,8 +225,7 @@ main {
     vertical-align:middle;
 }
 .hover_bkgr_fricc > div {
-    background-color: #fff;
-    box-shadow: 10px 10px 60px #555;
+    background-color: #444;
     display: inline-block;
     height: auto;
     max-width: 551px;
@@ -237,10 +236,10 @@ main {
     border-radius: 8px;
     padding: 15px 5%;
 }
+.hover_bkgr_fricc a {
+    color: #ff0;
+}
 .popupCloseButton {
-    background-color: #fff;
-    border: 3px solid #999;
-    border-radius: 50px;
     cursor: pointer;
     display: inline-block;
     font-family: arial;
@@ -249,7 +248,6 @@ main {
     top: -20px;
     right: -20px;
     font-size: 25px;
-    line-height: 30px;
     width: 30px;
     height: 30px;
     text-align: center;
