@@ -10,19 +10,36 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
-a:link, a:visited {
-  background-color: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  transition: ease-in-out 0.2s;
-  border-radius: 5px;
-  display: inline-block; }
+.lightbox:target {
+  bottom: 0; left: 0; right: 0; top: 0;
+  position: absolute; }
 
-a:hover, a:active {
-  background-color: var(--color-gray-dark);
-  transition: ease-in-out 0.2s; }
+.lightbox:target .close a {
+  background: rgba(0, 0, 0, 0.75);
+  bottom: 0; left: 0; right: 0; top: 0;
+  position: absolute; z-index: 1; }
+
+  .close span { color: #FFFFFF; font-size: 2em;
+    text-indent: 0; position: absolute;
+    right: 0.5em; top: 0.5em; }
+
+  .close { text-indent: -999em;}
+
+.lightbox:target div { background: #FFFFFF; position: absolute; left: 50%; top: 50%; z-index: 99; }
+
+ a:link, a:visited {
+   background-color: none;
+   color: white;
+   padding: 10px;
+   text-align: center;
+   text-decoration: none;
+   transition: ease-in-out 0.2s;
+   border-radius: 5px;
+   }
+
+ a:hover, a:active {
+   background-color: var(--color-gray-dark);
+   transition: ease-in-out 0.2s; }
 
 body {
   background: var(--color-black);
