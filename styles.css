@@ -229,7 +229,7 @@ main {
     background-color: #444;
     display: inline-block;
     height: auto;
-    max-width: 551px;
+    max-width: 400px;
     min-height: 100px;
     vertical-align: middle;
     width: 60%;
@@ -260,7 +260,7 @@ main {
 .trigger_popup_fricc {
     cursor: pointer;
     font-size: 20px;
-    margin: 20px;
+    margin: 15px 0 0 30px;
     display: inline-block;
     font-weight: bold;
 }
