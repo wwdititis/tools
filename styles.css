@@ -1,31 +1,19 @@
 :root {
-  --color-black: #121213;
-  --color-white: #fff;
+  --bg-color: #121213;
+  --bg-text: #fff;
   --color-green: #538d4e;
   --color-yellow: #B59F3B;
   --color-gray-dark: #3A3A3C;
   --color-gray-light: #818384;
 }
 
+@font-face {
+  font-family: PiratesBay;
+  src: url(res/piratesbay.ttf);
+}
+
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
-
-.lightbox:target {
-  bottom: 0; left: 0; right: 0; top: 0;
-  position: absolute; }
-
-.lightbox:target .close a {
-  background: rgba(0, 0, 0, 0.75);
-  bottom: 0; left: 0; right: 0; top: 0;
-  position: absolute; z-index: 1; }
-
-  .close span { color: #FFFFFF; font-size: 2em;
-    text-indent: 0; position: absolute;
-    right: 0.5em; top: 0.5em; }
-
-  .close { text-indent: -999em;}
-
-.lightbox:target div { background: #FFFFFF; position: absolute; left: 50%; top: 50%; z-index: 99; }
 
  a:link, a:visited {
    background-color: none;
@@ -42,14 +30,11 @@ html { box-sizing: border-box; }
    transition: ease-in-out 0.2s; }
 
 body {
-  background: var(--color-black);
-  color: var(--color-white);
-
+  background: var(--bg-color);
+  color: var(--bg-text);
   font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
-
   min-height: 100vh;
   margin: 0;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -57,14 +42,16 @@ body {
 }
 
 header {
-  display: inline-flex; justify-content: center;
-  border-bottom: 1px solid var(--color-gray-dark);
+  display: inline-flex; 
+  justify-content: center;
+  border-bottom: 1px solid #FFF;
 }
 
 h1 {
   margin: 10px 0;
   padding: 0;
   text-align: center;
+  font-family: PiratesBay;
 }
 
 main {
@@ -94,9 +81,9 @@ main {
 }
 
 .toast {
-  background: var(--color-white);
+  background: white;
   border-radius: 4px;
-  color: var(--color-black);
+  color: black;
   padding: 1rem;
   font-weight: bold;
   text-align: center;
