@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: PiratesBay;
-  src: url(res/piratesbay.ttf);
+  src: url(/res/piratesbay.ttf);
 }
 
 html { box-sizing: border-box; }
@@ -210,6 +210,7 @@ main {
 /* Popup box BEGIN */
 .hover_bkgr_fricc{
     background:rgba(0,0,0,.4);
+    font: 12px monospace;
     cursor:pointer;
     display:none;
     height:100%;
@@ -237,7 +238,8 @@ main {
     padding: 15px 5%;
 }
 .hover_bkgr_fricc a {
-    color: #ff0;
+    color: #b7b7b7;
+    padding: 0;
 }
 .popupCloseButton {
     cursor: pointer;
