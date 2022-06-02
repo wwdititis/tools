@@ -1,7 +1,7 @@
 :root {
   --bg-color: #121213;
   --bg-text: #fff;
-  --valid-letter: #538d4e;
+  --valid-letter: #FF0893;
   --invalid-letter: #B59F3B;
   --none-letter: #3A3A3C;
   --cfilled-letter: #818384;
@@ -112,7 +112,7 @@ main {
 
 [data-status],
 [data-key] {
-  border: 2px solid #999;
+  border: 2px solid #363636;
   font-weight: 700;
   font-size: 2rem;
   line-height: 2rem;
@@ -152,7 +152,7 @@ main {
 [data-key='Enter'] { width: 6rem; }
 
 [data-key='Backspace'] {
-  background-image: url(./backspace.svg);
+  background-image: url('res/backspace.svg');
   background-repeat: no-repeat;
   background-position: center;
   text-indent: -9999px;
