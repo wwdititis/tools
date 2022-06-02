@@ -1,10 +1,10 @@
 :root {
   --bg-color: #121213;
   --bg-text: #fff;
-  --color-green: #538d4e;
-  --color-yellow: #B59F3B;
-  --color-gray-dark: #3A3A3C;
-  --color-gray-light: #818384;
+  --valid-letter: #538d4e;
+  --invalid-letter: #B59F3B;
+  --none-letter: #3A3A3C;
+  --cfilled-letter: #818384;
 }
 
 @font-face {
@@ -26,7 +26,7 @@ html { box-sizing: border-box; }
    }
 
  a:hover, a:active {
-   background-color: var(--color-gray-dark);
+   background-color: #999;
    transition: ease-in-out 0.2s; }
 
 body {
@@ -112,7 +112,7 @@ main {
 
 [data-status],
 [data-key] {
-  border: 2px solid var(--color-gray-dark);
+  border: 2px solid #999;
   font-weight: 700;
   font-size: 2rem;
   line-height: 2rem;
@@ -135,7 +135,7 @@ main {
 #keyboard ul { justify-content: center; }
 
 [data-key] {
-  background: var(--color-gray-light);
+  background: #595959;
   border: none;
   border-radius: 4px;
 
@@ -159,10 +159,10 @@ main {
   width: 4rem;
 }
 
-[data-status='filled']      { border: 1px solid var(--color-gray-light); }
-[data-status='valid']       { background: var(--color-green); }
-[data-status='invalid']     { background: var(--color-yellow); }
-[data-status='none']        { background: var(--color-gray-dark); }
+[data-status='filled']      { border: 1px solid var(--filled-letter); }
+[data-status='valid']       { background: var(--valid-letter); }
+[data-status='invalid']     { background: var(--invalid-letter); }
+[data-status='none']        { background: var(--none-letter); }
 
 [data-animation='pop']      { animation: PopIn 100ms; }
 
