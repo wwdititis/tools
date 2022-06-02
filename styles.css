@@ -249,7 +249,7 @@ main {
     width:100%;
     z-index:10000;
 }
-.hover_help, .hover_info > div {
+.hover_help > div, .hover_info > div {
     background-color: #444;
     display: inline-block;
     height: auto;
