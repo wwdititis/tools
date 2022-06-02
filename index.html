@@ -16,8 +16,15 @@
       $('.hover_help').click(function(){
           $('.hover_help').hide();
       });
+      $('.popup_info').click(function(){
+         $('.hover_info').show();
+      });
+      $('.hover_info').click(function(){
+          $('.hover_info').hide();
+      });
       $('.popupCloseButton').click(function(){
           $('.hover_help').hide();
+          $('.hover_info').hide();
       });
     });
   </script>
@@ -34,10 +41,11 @@
             <div class="popupCloseButton">&times;</div>
             <p>
               <center><strong>HOW TO PLAY</strong></center><br /><br />
-              Guess the CREWDLE (the right word) in six tries.<br />
-              Each guess must be a valid five-letter word that is relevant to the OFMD universe.
-              Hit the enter button to submit<br /><br />
-              After each guess, the color of the tiles will change to show how close your guess was to the word.<br /><br /><br />
+              Guess the the right word in 6 tries<br />
+              1. Type in your guess <br />
+              2. Each guess must be a 5 letter word that is relevant to the OFMD universe <br />
+              3. Hit the enter button to submit <br /><br />
+              After each guess, the color of the tiles will change to show how close your guess was to the word:<br /><br /><br />
               <center><strong>EXAMPLES</strong></center><br />
               <img src="imgs/ex1.png">
               The letter S is in the word and in the correct spot<br /><br />
@@ -50,7 +58,7 @@
     </div>
 
     <h1>Crewdle</h1>
-<!--
+
       <a class="popup_info"><ion-icon name="information-circle-outline" size="large"></ion-icon></a>
       <div class="hover_info">
           <span class="helper"></span>
@@ -64,7 +72,7 @@
                 Contact <a href="https://twitter.com/teachwaititi">me</a> for bugs and/or suggestions
               </p>
           </div>
-      </div> -->
+      </div> 
 
   </header>
   <main>
