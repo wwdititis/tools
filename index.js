@@ -128,6 +128,7 @@ const onKeyDown = (key) => {
   // Don't allow more then 6 attempts to guess the word
   if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
     showMessage('Game over.');
+    $('.hover_over').show();
     return;
   }
   
