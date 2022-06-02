@@ -15,7 +15,7 @@ let currentWord = '';
 
 // Get everything setup and the game responding to user actions.
 const init = () => {
-  console.log('👋 Welcome to Wordle');
+  console.log('👋 Welcome to Crewdle');
 
   const KEYBOARD_KEYS = ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'];
 
@@ -126,8 +126,11 @@ const onKeyboardButtonClick = (event) => {
 
 const onKeyDown = (key) => {
   // Don't allow more then 6 attempts to guess the word
-  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) return;
-
+  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
+    showMessage('Game over.');
+    return;
+  }
+  
   // Find the current active row
   const currentRow = document.querySelector(`#board ul[data-row='${history.length}']`);
 
