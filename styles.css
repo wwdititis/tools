@@ -3,7 +3,7 @@
   --bg-text: #fff;
   --valid-letter: #FF0893;
   --invalid-letter: #B59F3B;
-  --none-letter: #3A3A3C;
+  --none-letter: #303030;
   --filled-letter: #818384;
 }
 
@@ -112,7 +112,7 @@ main {
 
 [data-status],
 [data-key] {
-  border: 2px solid #363636;
+  border: 2px solid #2c2c2c;
   font-weight: 700;
   font-size: 2rem;
   line-height: 2rem;

@@ -3,7 +3,7 @@
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
 const WORD_LIST = [
-  'FLAGS', 'BLACK',
+  'FLAGS', 'MATES',
 ];
 const WORD_OF_THE_DAY = WORD_LIST[getRandomIndex(WORD_LIST.length)];
 
