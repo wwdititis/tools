@@ -126,7 +126,7 @@ const onKeyboardButtonClick = (event) => {
 
 const onKeyDown = (key) => {
   // Don't allow more then 6 attempts to guess the word
-  if (history.length > MAX_NUMBER_OF_ATTEMPTS) {
+  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
     $('.hover_over').show();
     return;
   }
