@@ -209,7 +209,7 @@ main {
 }
 
 /* Popup box BEGIN */
-.popup_help {
+.popup_help, .popup_info {
     cursor: pointer;
     left: 20px;
     top: 25px;
@@ -217,7 +217,7 @@ main {
     height: 32px;
 }
 
-.hover_help {
+.hover_help, .hover_info, .hover_over {
     background:rgba(0,0,0,.4);
     font: 12px monospace;
     cursor:pointer;
@@ -229,27 +229,8 @@ main {
     width:100%;
     z-index:10000;
 }
-.popup_info {
-    cursor: pointer;
-    left: 20px;
-    top: 25px;
-    position: relative;
-    height: 32px;
-}
 
-.hover_info {
-    background:rgba(0,0,0,.4);
-    font: 12px monospace;
-    cursor:pointer;
-    display:none;
-    height:100%;
-    position:fixed;
-    text-align:center;
-    top:0;
-    width:100%;
-    z-index:10000;
-}
-.hover_help > div, .hover_info > div {
+.hover_help > div, .hover_info > div, .hover_over > div {
     background-color: #444;
     display: inline-block;
     height: auto;
@@ -283,7 +264,7 @@ main {
 .popupCloseButton:hover {
     background-color: #ccc;
 }
-.hover_help a {
+.hover_help, .hover_info a {
     color: #b7b7b7;
     padding: 0;
 }
