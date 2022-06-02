@@ -209,7 +209,15 @@ main {
 }
 
 /* Popup box BEGIN */
-.hover {
+.popup_help {
+    cursor: pointer;
+    left: 20px;
+    top: 25px;
+    position: relative;
+    height: 32px;
+}
+
+.hover_help {
     background:rgba(0,0,0,.4);
     font: 12px monospace;
     cursor:pointer;
@@ -221,6 +229,7 @@ main {
     width:100%;
     z-index:10000;
 }
+.help_bg > div {text-align: justify;letter-spacing: 0.01em;}
 .center {
     display:inline-block;
     height:100%;
@@ -258,13 +267,7 @@ main {
 .popupCloseButton:hover {
     background-color: #ccc;
 }
-.popup {
-    cursor: pointer;
-    left: 20px;
-    top: 25px;
-    position: relative;
-    height: 32px;
-}
 
-.help_bg > div {text-align: justify;letter-spacing: 0.01em;}
+
+
 .info {}

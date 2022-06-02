@@ -10,17 +10,17 @@
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <script>
     $(window).load(function () {
-      $('.help').click(function(){
-         $('.help_bg').show();
+      $('.popup_help').click(function(){
+         $('.hover_help').show();
       });
       $('.info').click(function(){
          $('.info_bg').show();
       });
-      $('.hover').click(function(){
-          $('.hover').hide();
+      $('.hover_help').click(function(){
+          $('.hover_help').hide();
       });
       $('.popupCloseButton').click(function(){
-          $('.hover').hide();
+          $('.hover_help').hide();
       });
     });
   </script>
@@ -30,9 +30,9 @@
   <header>
     <!-- <img src="imgs/flag_emoji.png" alt="Pirate flag"> -->
 
-    <a class="popup help"><ion-icon name="help-circle-outline" size="large"></ion-icon></a>
-    <div class="hover help_bg">
-        <span class="helper"></span>
+    <a class="popup_help"><ion-icon name="help-circle-outline" size="large"></ion-icon></a>
+    <div class="hover_help">
+        <span class="center"></span>
         <div>
             <div class="popupCloseButton">&times;</div>
             <p>
@@ -54,8 +54,8 @@
 
     <h1>Crewdle</h1>
 
-      <a class="popup info"><ion-icon name="information-circle-outline" size="large"></ion-icon></a>
-      <div class="hover info_bg">
+      <a class="popup_info"><ion-icon name="information-circle-outline" size="large"></ion-icon></a>
+      <div class="hover_info">
           <span class="helper"></span>
           <div>
               <div class="popupCloseButton">&times;</div>
