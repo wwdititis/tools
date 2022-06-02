@@ -3,8 +3,7 @@
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
 const WORD_LIST = [
-  'SHIPS', 'BLACK', 'FLAGS',
-  'BOATS', 'RAIDS', 'WATER',
+  'SHIPS', 'BLACK',
 ];
 const WORD_OF_THE_DAY = WORD_LIST[getRandomIndex(WORD_LIST.length)];
 
@@ -42,7 +41,7 @@ const showMessage = (message) => {
 
   document.querySelector('.toaster ul').prepend(toast);
 
-  setTimeout(() => toast.classList.add('fade'), 2000);
+  setTimeout(() => toast.classList.add('fade'), 1000);
 
   toast.addEventListener('transitionend', (event) => event.target.remove());
 }
@@ -158,7 +157,7 @@ const onKeyDown = (key) => {
 
   if (key === ENTER_KEY) {
     if (currentWord.length < 5) {
-      showMessage('Ye\'re missin\' a few letters, mate...');
+      showMessage('Ye\'re missin\' a few letters, mate');
       return;
     }
 

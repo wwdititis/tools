@@ -10,14 +10,17 @@
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <script>
     $(window).load(function () {
-      $(".trigger_popup_fricc").click(function(){
-         $('.hover_bkgr_fricc').show();
+      $('.help').click(function(){
+         $('.help_bg').show();
       });
-      $('.hover_bkgr_fricc').click(function(){
-          $('.hover_bkgr_fricc').hide();
+      $('.info').click(function(){
+         $('.info_bg').show();
+      });
+      $('.hover').click(function(){
+          $('.hover').hide();
       });
       $('.popupCloseButton').click(function(){
-          $('.hover_bkgr_fricc').hide();
+          $('.hover').hide();
       });
     });
   </script>
@@ -26,25 +29,46 @@
 
   <header>
     <!-- <img src="imgs/flag_emoji.png" alt="Pirate flag"> -->
-    
+
+    <a class="popup help"><ion-icon name="help-circle-outline" size="large"></ion-icon></a>
+    <div class="hover help_bg">
+        <span class="helper"></span>
+        <div>
+            <div class="popupCloseButton">&times;</div>
+            <p>
+              <center><strong>HOW TO PLAY</strong></center><br /><br />
+              Guess the CREWDLE (the right word) in six tries.<br />
+              Each guess must be a valid five-letter word that is relevant to the OFMD universe.
+              Hit the enter button to submit<br /><br />
+              After each guess, the color of the tiles will change to show how close your guess was to the word.<br /><br /><br />
+              <center><strong>EXAMPLES</strong></center><br />
+              <img src="imgs/ex1.png">
+              The letter S is in the word and in the correct spot<br /><br />
+              <img src="imgs/ex2.png">
+              The letter A is in the word but in the wrong spot<br /><br />
+              <img src="imgs/ex3.png">
+              Letters in gray are not in the word in any spot<br />
+            </p>
+        </div>
+    </div>
+
     <h1>Crewdle</h1>
-    
-    <!-- popup -->
-      <a class="trigger_popup_fricc"><ion-icon name="information-circle" size="large"></ion-icon></a>
-      <div class="hover_bkgr_fricc">
+
+      <a class="popup info"><ion-icon name="information-circle-outline" size="large"></ion-icon></a>
+      <div class="hover info_bg">
           <span class="helper"></span>
           <div>
               <div class="popupCloseButton">&times;</div>
               <p>
-                This is an Our Flag Means Death themed version of the game Wordle. <br /><br />
+                This is an Our Flag Means Death themed version of the game <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a> <br /><br />
                 Coded by Des <a href="https://twitter.com/teachwaititi">@teachwaititi</a> <br />
                 Name suggestion by <a href="https://twitter.com/Magalag2011">@Magalag2011</a> <br />
-                Based on <a href="https://github.com/bitseek-io/wordle">this</a> open source code. <br /><br />
-                Contact <a href="https://twitter.com/teachwaititi">me</a> for bugs and/or suggestions.
+                Based on <a href="https://github.com/bitseek-io/wordle">this</a> open source code <br /><br />
+                Contact <a href="https://twitter.com/teachwaititi">me</a> for bugs and/or suggestions
               </p>
           </div>
       </div>
-    
+
   </header>
   <main>
     <section id="board">

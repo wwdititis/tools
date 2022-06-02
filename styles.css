@@ -42,16 +42,17 @@ body {
 }
 
 header {
-  display: inline-flex; 
-  justify-content: center;
+  display: inline-flex;
+  justify-content: space-around;
   border-bottom: 1px solid #FFF;
 }
 
 h1 {
   margin: 10px 0;
   padding: 0;
+  letter-spacing: 2px;
   text-align: center;
-  font-family: PiratesBay;
+  font: 50px PiratesBay;
 }
 
 main {
@@ -208,7 +209,7 @@ main {
 }
 
 /* Popup box BEGIN */
-.hover_bkgr_fricc{
+.hover {
     background:rgba(0,0,0,.4);
     font: 12px monospace;
     cursor:pointer;
@@ -220,12 +221,12 @@ main {
     width:100%;
     z-index:10000;
 }
-.hover_bkgr_fricc .helper{
+.center {
     display:inline-block;
     height:100%;
     vertical-align:middle;
 }
-.hover_bkgr_fricc > div {
+.hover > div {
     background-color: #444;
     display: inline-block;
     height: auto;
@@ -237,7 +238,7 @@ main {
     border-radius: 8px;
     padding: 15px 5%;
 }
-.hover_bkgr_fricc a {
+.hover a {
     color: #b7b7b7;
     padding: 0;
 }
@@ -257,10 +258,13 @@ main {
 .popupCloseButton:hover {
     background-color: #ccc;
 }
-.trigger_popup_fricc {
+.popup {
     cursor: pointer;
-    font-size: 20px;
-    margin: 15px 0 0 30px;
-    display: inline-block;
-    font-weight: bold;
+    left: 20px;
+    top: 25px;
+    position: relative;
+    height: 32px;
 }
+
+.help_bg > div {text-align: justify;letter-spacing: 0.01em;}
+.info {}
