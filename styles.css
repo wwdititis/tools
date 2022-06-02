@@ -229,13 +229,27 @@ main {
     width:100%;
     z-index:10000;
 }
-
-.center {
-    display:inline-block;
-    height:100%;
-    vertical-align:middle;
+.popup_info {
+    cursor: pointer;
+    left: 20px;
+    top: 25px;
+    position: relative;
+    height: 32px;
 }
-.hover_help > div {
+
+.hover_info {
+    background:rgba(0,0,0,.4);
+    font: 12px monospace;
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_help, .hover_info > div {
     background-color: #444;
     display: inline-block;
     height: auto;
@@ -246,6 +260,11 @@ main {
     position: relative;
     border-radius: 8px;
     padding: 15px 5%;
+}
+.center {
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
 }
 
 .popupCloseButton {
