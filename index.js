@@ -8,7 +8,7 @@ const WORD_LIST = [
 const WORD_OF_THE_DAY = WORD_LIST[getRandomIndex(WORD_LIST.length)];
 
 // In case we want to make the game difficult or easier
-const MAX_NUMBER_OF_ATTEMPTS = 6;
+const MAX_NUMBER_OF_ATTEMPTS = 3;
 
 const history = [];
 let currentWord = '';
@@ -78,11 +78,17 @@ const checkGuess = (guess, word) => {
 
         remainingWordLetters.push(false);
         remainingGuessLetters.push(false);
+
     } else {
       remainingWordLetters.push(letter);
       remainingGuessLetters.push(guessLetters[index]);
     }
   });
+
+  if (currentWord === WORD_OF_THE_DAY) {
+    showMessage('YOU WON');
+    return;
+  }
 
   // Third iteration finds all the misplaced letters
   remainingWordLetters.forEach(letter => {
@@ -115,6 +121,11 @@ const checkGuess = (guess, word) => {
   });
 
   history.push(currentWord);
+  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
+    showMessage('YOU LOST');
+    $('.hover_over').show();
+    return;
+  }
   currentWord = '';
 }
 
@@ -127,10 +138,9 @@ const onKeyboardButtonClick = (event) => {
 const onKeyDown = (key) => {
   // Don't allow more then 6 attempts to guess the word
   if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-    $('.hover_over').show();
     return;
   }
-  
+
   // Find the current active row
   const currentRow = document.querySelector(`#board ul[data-row='${history.length}']`);
 
@@ -176,6 +186,11 @@ const onKeyDown = (key) => {
 
   // We have reached the 5 letter limit for the guess word
   if (currentWord.length >= 5) return;
+  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
+    showMessage('YOU LOST');
+    $('.hover_over').show();
+    return;
+  }
 
   const upperCaseLetter = key.toUpperCase();
 
