@@ -122,7 +122,6 @@ const checkGuess = (guess, word) => {
 
   history.push(currentWord);
   if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-    showMessage('YOU LOST');
     $('.hover_over').show();
     return;
   }
@@ -137,9 +136,7 @@ const onKeyboardButtonClick = (event) => {
 
 const onKeyDown = (key) => {
   // Don't allow more then 6 attempts to guess the word
-  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-    return;
-  }
+  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) return;
 
   // Find the current active row
   const currentRow = document.querySelector(`#board ul[data-row='${history.length}']`);
@@ -164,7 +161,7 @@ const onKeyDown = (key) => {
 
     // Remove the last letter from the currentWord
     currentWord = currentWord.slice(0, -1);
-
+    if (currentWord === null) return;
     return;
   }
 
