@@ -2,9 +2,6 @@
 
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
-const WORD_RELEVANT = [
-  'WATER', 'BOATS',
-];
 const WORD_LIST = [
   'FLAGS', 'MATES',
 ];
@@ -174,7 +171,7 @@ const onKeyDown = (key) => {
       return;
     }
 
-    if (currentWord.length === 5 && (WORD_LIST.includes(currentWord) || WORD_RELEVANT.includes(currentWord))) {
+    if (currentWord.length === 5 && (WORD_LIST.includes(currentWord) || RELEVANT_WORDS.includes(currentWord))) {
       checkGuess(currentWord, WORD_OF_THE_DAY);
     } else {
       currentRow.setAttribute('data-animation', 'invalid');
