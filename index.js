@@ -2,6 +2,9 @@
 
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
+const WORD_RELEVANT = [
+  'WATER', 'BOATS',
+];
 const WORD_LIST = [
   'FLAGS', 'MATES',
 ];
@@ -84,11 +87,6 @@ const checkGuess = (guess, word) => {
       remainingGuessLetters.push(guessLetters[index]);
     }
   });
-
-  // if (currentWord === WORD_OF_THE_DAY) {
-  //   $('.hover_won').show();
-  //   return;
-  // }
 
   // Third iteration finds all the misplaced letters
   remainingWordLetters.forEach(letter => {
@@ -176,7 +174,7 @@ const onKeyDown = (key) => {
       return;
     }
 
-    if (currentWord.length === 5 && WORD_LIST.includes(currentWord)) {
+    if (currentWord.length === 5 && (WORD_LIST.includes(currentWord) || WORD_RELEVANT.includes(currentWord))) {
       checkGuess(currentWord, WORD_OF_THE_DAY);
     } else {
       currentRow.setAttribute('data-animation', 'invalid');
