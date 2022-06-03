@@ -178,7 +178,18 @@ const onKeyDown = (key) => {
 
     if (currentWord.length === 5 && (GUESSES.includes(currentWord) || RELEVANT_WORDS.includes(currentWord))) {
       checkGuess(currentWord, WORD_OF_THE_DAY);
-      
+
+      // const share = [];
+      // for (var l = 0; c < 6; c++) {
+      //   for (var c = 0; l < 6; l++) {
+      //     if (currentWord[c] === WORD_OF_THE_DAY[i]) {
+      //       share[c] = v;
+      //       showMessage(share);
+      //     } else  {
+      //       share[c] = i;
+      //     //array.push($(selector, response).html());
+      //   }}}
+
     } else {
       currentRow.setAttribute('data-animation', 'invalid');
       showMessage('That\'s not a relevant word in the OFMD universe...');
