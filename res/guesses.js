@@ -1,0 +1,3 @@
+const GUESSES = [
+  'FLAGS', 'MATES',
+];

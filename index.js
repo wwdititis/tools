@@ -2,15 +2,15 @@
 
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
-const WORD_LIST = [
-  'FLAGS', 'MATES',
-];
-const WORD_OF_THE_DAY = WORD_LIST[getRandomIndex(WORD_LIST.length)];
+
+const WORD_OF_THE_DAY = GUESSES[getRandomIndex(GUESSES.length)];
 
 // In case we want to make the game difficult or easier
 const MAX_NUMBER_OF_ATTEMPTS = 3;
 
 const history = [];
+const first_row = [];
+const sec_row = [];
 let currentWord = '';
 
 // Get everything setup and the game responding to user actions.
@@ -78,7 +78,7 @@ const checkGuess = (guess, word) => {
 
         remainingWordLetters.push(false);
         remainingGuessLetters.push(false);
-
+        first_row.push('v');
     } else {
       remainingWordLetters.push(letter);
       remainingGuessLetters.push(guessLetters[index]);
@@ -96,11 +96,12 @@ const checkGuess = (guess, word) => {
         .querySelector(`li:nth-child(${remainingGuessLetters.indexOf(letter) + 1})`);
 
       column.setAttribute('data-status', 'invalid');
-
+      first_row.push('i');
       const keyboardKey = document.querySelector(`[data-key='${letter}']`);
 
       if (keyboardKey.getAttribute('data-status') !== 'valid') {
         keyboardKey.setAttribute('data-status', 'invalid');
+        sec_row.push('i');
       }
     }
   });
@@ -112,11 +113,15 @@ const checkGuess = (guess, word) => {
 
     if (keyboardKey.getAttribute('data-status') === 'empty') {
       keyboardKey.setAttribute('data-status', 'none');
+      first_row.push('0');
     }
   });
 
   history.push(currentWord);
   if (currentWord === WORD_OF_THE_DAY) {
+    $(".hover_won").text("Crewdle "+history.length+"/"+MAX_NUMBER_OF_ATTEMPTS);
+    $(".hover_won").html($('.hover_won').html() + " <br><br>"+first_row);
+    $(".hover_won").html($('.hover_won').html() + " <br>"+sec_row);
     $('.hover_won').show();
     return;
   } else {
@@ -171,7 +176,7 @@ const onKeyDown = (key) => {
       return;
     }
 
-    if (currentWord.length === 5 && (WORD_LIST.includes(currentWord) || RELEVANT_WORDS.includes(currentWord))) {
+    if (currentWord.length === 5 && (GUESSES.includes(currentWord) || RELEVANT_WORDS.includes(currentWord))) {
       checkGuess(currentWord, WORD_OF_THE_DAY);
     } else {
       currentRow.setAttribute('data-animation', 'invalid');
