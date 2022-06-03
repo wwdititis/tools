@@ -217,7 +217,8 @@ main {
     height: 32px;
 }
 
-.hover_help, .hover_info, .hover_over {
+.hover_help, .hover_info,
+.hover_over, .hover_won {
     background:rgba(0,0,0,.4);
     font: 12px monospace;
     cursor:pointer;
@@ -230,7 +231,8 @@ main {
     z-index:10000;
 }
 
-.hover_help > div, .hover_info > div, .hover_over > div {
+.hover_help > div, .hover_info > div,
+.hover_over > div, .hover_won > div {
     background-color: #444;
     display: inline-block;
     height: auto;

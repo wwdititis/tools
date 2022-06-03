@@ -85,10 +85,10 @@ const checkGuess = (guess, word) => {
     }
   });
 
-  if (currentWord === WORD_OF_THE_DAY) {
-    showMessage('YOU WON');
-    return;
-  }
+  // if (currentWord === WORD_OF_THE_DAY) {
+  //   $('.hover_won').show();
+  //   return;
+  // }
 
   // Third iteration finds all the misplaced letters
   remainingWordLetters.forEach(letter => {
@@ -121,9 +121,14 @@ const checkGuess = (guess, word) => {
   });
 
   history.push(currentWord);
-  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-    $('.hover_over').show();
+  if (currentWord === WORD_OF_THE_DAY) {
+    $('.hover_won').show();
     return;
+  } else {
+    if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
+      $('.hover_over').show();
+      return;
+    }
   }
   currentWord = '';
 }
@@ -161,7 +166,7 @@ const onKeyDown = (key) => {
 
     // Remove the last letter from the currentWord
     currentWord = currentWord.slice(0, -1);
-    if (currentWord === null) return;
+    //if (currentWord === null) return;
     return;
   }
 
