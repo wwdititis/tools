@@ -178,6 +178,7 @@ const onKeyDown = (key) => {
 
     if (currentWord.length === 5 && (GUESSES.includes(currentWord) || RELEVANT_WORDS.includes(currentWord))) {
       checkGuess(currentWord, WORD_OF_THE_DAY);
+      
     } else {
       currentRow.setAttribute('data-animation', 'invalid');
       showMessage('That\'s not a relevant word in the OFMD universe...');
