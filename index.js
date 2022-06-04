@@ -12,7 +12,7 @@ var pos;
 
 const share = [];
 for (var i = 0; i < MAX_NUMBER_OF_ATTEMPTS; i++) {
-  share[i] = ['&#x2B1B','&#x2B1B','&#x2B1B','&#x2B1B','&#x2B1B'];
+  share[i] = ['&#x2B1B;','&#x2B1B;','&#x2B1B;','&#x2B1B;','&#x2B1B;'];
 }
 
 const history = [];
@@ -127,11 +127,11 @@ const checkGuess = (guess, word) => {
         pos = l;
       }
       if ((guessLetters[l] === wordLetters[c]) && (l === c)) {
-        share[history.length][l] = '&#x1F7E9'; //valid
+        share[history.length][l] = '&#x1F7E9;'; //valid
       }
     }
     if (pos !== 0) {
-        share[history.length][pos] = '&#x1F7E7'; //invalid
+        share[history.length][pos] = '&#x1F7E7;'; //invalid
     }
     pos = 0;
   }
@@ -140,14 +140,17 @@ const checkGuess = (guess, word) => {
 
   if (currentWord === WORD_OF_THE_DAY) {
     $('.share').html('&#x1F3F4;&#x200D;&#x2620;&#xFE0F; Crewdle '+history.length+'/'+MAX_NUMBER_OF_ATTEMPTS+' &#x1F34A');
-    $('.share').html($('.hover_won').html()+'<br><br>'+share[0].join(''));
-    $('.share').html($('.hover_won').html()+'<br>'+share[1].join(''));
-    $('.share').html($('.hover_won').html()+'<br>'+share[2].join(''));
+    $('.share').html($('.share').html()+'<br><br>'+share[0].join(''));
+    $('.share').html($('.share').html()+'<br>'+share[1].join(''));
+    $('.share').html($('.share').html()+'<br>'+share[2].join(''));
     $('.hover_won').show();
     return;
   } else {
     if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-      $('.share').html('&#x1F3F4;&#x200D;&#x2620;&#xFE0F; Crewdle &#x1F3F4 X/'+MAX_NUMBER_OF_ATTEMPTS);
+      $('.share').html('&#x1F3F4;&#x200D;&#x2620;&#xFE0F; Crewdle &#x1F34A; X/'+MAX_NUMBER_OF_ATTEMPTS);
+      $('.share').html($('.share').html()+'<br><br>'+share[0].join(''));
+      $('.share').html($('.share').html()+'<br>'+share[1].join(''));
+      $('.share').html($('.share').html()+'<br>'+share[2].join(''));
       $('.hover_over').show();
       return;
     }

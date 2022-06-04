@@ -1,8 +1,8 @@
 :root {
   --bg-color: #121213;
   --bg-text: #fff;
-  --valid-letter: #FF0893;
-  --invalid-letter: #B59F3B;
+  --valid-letter: #3aa131;
+  --invalid-letter: #db9641;
   --none-letter: #303030;
   --filled-letter: #818384;
 }
@@ -160,9 +160,9 @@ main {
 }
 
 [data-status='filled']      { border: 1px solid var(--filled-letter); }
-[data-status='valid']       { background: var(--valid-letter); }
-[data-status='invalid']     { background: var(--invalid-letter); }
-[data-status='none']        { background: var(--none-letter); }
+[data-status='valid']       { background: var(--valid-letter); border: none; }
+[data-status='invalid']     { background: var(--invalid-letter); border: none; }
+[data-status='none']        { background: var(--none-letter); border: none; }
 
 [data-animation='pop']      { animation: PopIn 100ms; }
 
@@ -243,6 +243,15 @@ main {
     position: relative;
     border-radius: 8px;
     padding: 15px 5%;
+}
+.button {
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  width: 10%;
+}
+.button:hover {
+  colors:#ff0;
 }
 .center {
     display:inline-block;
