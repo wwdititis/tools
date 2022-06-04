@@ -232,7 +232,7 @@ main {
 }
 
 .hover_help > div, .hover_info > div,
-.hover_over > div, .hover_won > div {
+.hover_over > div, .share {
     background-color: #444;
     display: inline-block;
     height: auto;

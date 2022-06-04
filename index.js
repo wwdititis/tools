@@ -138,10 +138,10 @@ const checkGuess = (guess, word) => {
   history.push(currentWord);
 
   if (currentWord === WORD_OF_THE_DAY) {
-    $('.hover_won').text('Crewdle '+history.length+'/'+MAX_NUMBER_OF_ATTEMPTS);
-    $('.hover_won').html($('.hover_won').html()+'<br><br>'+share[0]);
-    $('.hover_won').html($('.hover_won').html()+'<br>'+share[1]);
-    $('.hover_won').html($('.hover_won').html()+'<br>'+share[2]);
+    $('.share').html('Crewdle '+history.length+'/'+MAX_NUMBER_OF_ATTEMPTS);
+    $('.share').html($('.hover_won').html()+'<br><br>'+share[0]);
+    $('.share').html($('.hover_won').html()+'<br>'+share[1]);
+    $('.share').html($('.hover_won').html()+'<br>'+share[2]);
     $('.hover_won').show();
     return;
   } else {
