@@ -8,9 +8,13 @@ const WORD_OF_THE_DAY = GUESSES[getRandomIndex(GUESSES.length)];
 // In case we want to make the game difficult or easier
 const MAX_NUMBER_OF_ATTEMPTS = 3;
 
+var pos;
+const share = [];
+share[0] = ['0','0','0','0','0'];
+share[1] = ['0','0','0','0','0'];
+share[2] = ['0','0','0','0','0'];
+
 const history = [];
-const first_row = [];
-const sec_row = [];
 let currentWord = '';
 
 // Get everything setup and the game responding to user actions.
@@ -78,7 +82,7 @@ const checkGuess = (guess, word) => {
 
         remainingWordLetters.push(false);
         remainingGuessLetters.push(false);
-        first_row.push('v');
+
     } else {
       remainingWordLetters.push(letter);
       remainingGuessLetters.push(guessLetters[index]);
@@ -96,12 +100,11 @@ const checkGuess = (guess, word) => {
         .querySelector(`li:nth-child(${remainingGuessLetters.indexOf(letter) + 1})`);
 
       column.setAttribute('data-status', 'invalid');
-      first_row.push('i');
+
       const keyboardKey = document.querySelector(`[data-key='${letter}']`);
 
       if (keyboardKey.getAttribute('data-status') !== 'valid') {
         keyboardKey.setAttribute('data-status', 'invalid');
-        sec_row.push('i');
       }
     }
   });
@@ -113,15 +116,32 @@ const checkGuess = (guess, word) => {
 
     if (keyboardKey.getAttribute('data-status') === 'empty') {
       keyboardKey.setAttribute('data-status', 'none');
-      first_row.push('0');
+
     }
   });
 
+  for (var l = 0; l < 5; l++) {
+    for (var c = 0; c < 5; c++) {
+      if ((guessLetters[l] === wordLetters[c]) && (l !== c)) {
+        pos = l;
+      }
+      if ((guessLetters[l] === wordLetters[c]) && (l === c)) {
+        share[history.length][l] = 'v';
+      }
+    }
+    if (pos !== 0) {
+        share[history.length][pos] = 'i';
+    }
+    pos = 0;
+  }
+
   history.push(currentWord);
+
   if (currentWord === WORD_OF_THE_DAY) {
-    $(".hover_won").text("Crewdle "+history.length+"/"+MAX_NUMBER_OF_ATTEMPTS);
-    $(".hover_won").html($('.hover_won').html() + " <br><br>"+first_row);
-    $(".hover_won").html($('.hover_won').html() + " <br>"+sec_row);
+    $('.hover_won').text('Crewdle '+history.length+'/'+MAX_NUMBER_OF_ATTEMPTS);
+    $('.hover_won').html($('.hover_won').html()+'<br><br>'+share[0]);
+    $('.hover_won').html($('.hover_won').html()+'<br>'+share[1]);
+    $('.hover_won').html($('.hover_won').html()+'<br>'+share[2]);
     $('.hover_won').show();
     return;
   } else {
@@ -178,18 +198,6 @@ const onKeyDown = (key) => {
 
     if (currentWord.length === 5 && (GUESSES.includes(currentWord) || RELEVANT_WORDS.includes(currentWord))) {
       checkGuess(currentWord, WORD_OF_THE_DAY);
-
-      // const share = [];
-      // for (var l = 0; c < 6; c++) {
-      //   for (var c = 0; l < 6; l++) {
-      //     if (currentWord[c] === WORD_OF_THE_DAY[i]) {
-      //       share[c] = v;
-      //       showMessage(share);
-      //     } else  {
-      //       share[c] = i;
-      //     //array.push($(selector, response).html());
-      //   }}}
-
     } else {
       currentRow.setAttribute('data-animation', 'invalid');
       showMessage('That\'s not a relevant word in the OFMD universe...');
@@ -201,7 +209,6 @@ const onKeyDown = (key) => {
   // We have reached the 5 letter limit for the guess word
   if (currentWord.length >= 5) return;
   if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-    showMessage('YOU LOST');
     $('.hover_over').show();
     return;
   }
