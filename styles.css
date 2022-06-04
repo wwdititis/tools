@@ -71,6 +71,7 @@ main {
   transform: translate(-50%, 0);
   pointer-events: none;
   width: fit-content;
+  z-index: 1000;
 }
 
 .toaster ul {
@@ -229,7 +230,7 @@ main {
     text-align:center;
     top:0;
     width:100%;
-    z-index:10000;
+    z-index:1;
 }
 
 .hover_help > div, .hover_info > div,

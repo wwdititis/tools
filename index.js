@@ -279,3 +279,16 @@ document.addEventListener('DOMContentLoaded', init);
 function getRandomIndex (maxLength) {
   return Math.floor(Math.random() * Math.floor(maxLength));
 }
+
+function copyToClipboard(text) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(text).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+
+$(document).on('click', '.button', function(){
+    copyToClipboard(share[0].join(''));
+    showMessage(share[0].join(''));
+});
