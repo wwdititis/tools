@@ -18,16 +18,14 @@ html { box-sizing: border-box; }
 
  a:link, a:visited {
    background-color: none;
-   color: white;
-   padding: 10px;
-   text-align: center;
+   color: #999;
    text-decoration: none;
    transition: ease-in-out 0.2s;
-   border-radius: 5px;
    }
 
  a:hover, a:active {
-   background-color: #999;
+   background-color: #8a8787;
+   color: #000;
    transition: ease-in-out 0.2s; }
 
 body {
@@ -44,6 +42,7 @@ body {
 
 header {
   display: inline-flex;
+  align-items: center;
   justify-content: space-around;
   border-bottom: 1px solid #FFF;
 }
@@ -53,7 +52,7 @@ h1 {
   padding: 0;
   letter-spacing: 2px;
   text-align: center;
-  font: 50px PiratesBay;
+  font: 2.5em PiratesBay;
 }
 
 main {
@@ -114,7 +113,7 @@ main {
 
 [data-status],
 [data-key] {
-  border: 2px solid #2c2c2c;
+  border: 2px solid #404040;
   font-weight: 700;
   font-size: 2rem;
   line-height: 2rem;
@@ -213,10 +212,8 @@ main {
 /* Popup box BEGIN */
 .popup_help, .popup_info {
     cursor: pointer;
-    left: 20px;
-    top: 25px;
-    position: relative;
     height: 32px;
+    border-radius: 10px;
 }
 
 .hover_help, .hover_info,
@@ -225,6 +222,7 @@ main {
     font: 12px monospace;
     cursor:pointer;
     display:none;
+    color: #fff;
     height:100%;
     position:fixed;
     text-align:center;
@@ -241,7 +239,7 @@ main {
     max-width: 400px;
     min-height: 100px;
     vertical-align: middle;
-    width: 60%;
+    width: fit-content;
     position: relative;
     border-radius: 8px;
     padding: 15px 5%;
@@ -252,12 +250,17 @@ main {
 .button {
   cursor: pointer;
   position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   top: 70%;
   left: 45%;
   width: 10%;
   border: none;
-  height: 10%;
+  height: 50px;
   color: white;
+  border-radius: 5px;
+  font-weight: bold;
   background-color: #1C9CEA;
 }
 .button:hover {
@@ -281,11 +284,4 @@ main {
     width: 30px;
     height: 30px;
     text-align: center;
-}
-.popupCloseButton:hover {
-    background-color: #ccc;
-}
-.hover_help, .hover_info a {
-    color: #b7b7b7;
-    padding: 0;
 }

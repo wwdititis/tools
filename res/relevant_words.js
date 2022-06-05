@@ -1,3 +1,7 @@
 const RELEVANT_WORDS = [
-  'WATER', 'BOATS',
+  'BLACK',
+  'BOATS',
+  'DEATH',
+  'MEANS',
+  'WATER',
 ];
