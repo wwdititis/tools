@@ -139,7 +139,7 @@ const checkGuess = (guess, word) => {
   history.push(currentWord);
 
   if (currentWord === WORD_OF_THE_DAY) {
-    $('.share').html('&#x1F3F4;&#x200D;&#x2620;&#xFE0F; Crewdle '+history.length+'/'+MAX_NUMBER_OF_ATTEMPTS+' &#x1F34A');
+    $('.share').html('🏴‍☠️ Crewdle '+history.length+'/'+MAX_NUMBER_OF_ATTEMPTS+' 🍊');
     $('.share').html($('.share').html()+'<br><br>'+share[0].join(''));
     $('.share').html($('.share').html()+'<br>'+share[1].join(''));
     $('.share').html($('.share').html()+'<br>'+share[2].join(''));
@@ -147,7 +147,7 @@ const checkGuess = (guess, word) => {
     return;
   } else {
     if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-      $('.share').html('&#x1F3F4;&#x200D;&#x2620;&#xFE0F; Crewdle &#x1F34A; X/'+MAX_NUMBER_OF_ATTEMPTS);
+      $('.share').html('🏴‍☠️ Crewdle 🍊 X/'+MAX_NUMBER_OF_ATTEMPTS);
       $('.share').html($('.share').html()+'<br><br>'+share[0].join(''));
       $('.share').html($('.share').html()+'<br>'+share[1].join(''));
       $('.share').html($('.share').html()+'<br>'+share[2].join(''));
@@ -289,6 +289,15 @@ function copyToClipboard(text) {
 }
 
 $(document).on('click', '.button', function(){
-    copyToClipboard(share[0].join('')+'\n'+share[1].join('')+'\n'+share[2].join(''));
-    showMessage('Results copied to clipboard!');
+    if (currentWord === WORD_OF_THE_DAY) {
+      copyToClipboard('🏴‍☠️ Crewdle '+history.length+'/'+MAX_NUMBER_OF_ATTEMPTS+' 🍊\n'+share[0].join('')+'\n'+share[1].join('')+'\n'+share[2].join(''));
+      showMessage('Results copied to clipboard!');
+    } else {
+      if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
+        copyToClipboard('🏴‍☠️ Crewdle 🍊 X/'+MAX_NUMBER_OF_ATTEMPTS+'\n'+share[0].join('')+'\n'+share[1].join('')+'\n'+share[2].join(''));
+        showMessage('Results copied to clipboard!');
+      }
+    }
+    //copyToClipboard(share[0].join('')+'\n'+share[1].join('')+'\n'+share[2].join(''));
+
 });
