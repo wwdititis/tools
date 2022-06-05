@@ -12,7 +12,7 @@ var pos;
 
 const share = [];
 for (var i = 0; i < MAX_NUMBER_OF_ATTEMPTS; i++) {
-  share[i] = ['&#x2B1B;','&#x2B1B;','&#x2B1B;','&#x2B1B;','&#x2B1B;'];
+  share[i] = ['⬛','⬛','⬛','⬛','⬛'];
 }
 
 const history = [];
@@ -127,11 +127,11 @@ const checkGuess = (guess, word) => {
         pos = l;
       }
       if ((guessLetters[l] === wordLetters[c]) && (l === c)) {
-        share[history.length][l] = '&#x1F7E9;'; //valid
+        share[history.length][l] = '🟩'; //valid
       }
     }
     if (pos !== 0) {
-        share[history.length][pos] = '&#x1F7E7;'; //invalid
+        share[history.length][pos] = '🟧'; //invalid
     }
     pos = 0;
   }
@@ -197,7 +197,7 @@ const onKeyDown = (key) => {
 
   if (key === ENTER_KEY) {
     if (currentWord.length < 5) {
-      showMessage('Ye\'re missin\' a few letters, mate');
+      showMessage('Ye\'re missin\' a few letters, mate.');
       return;
     }
 
@@ -281,7 +281,7 @@ function getRandomIndex (maxLength) {
 }
 
 function copyToClipboard(text) {
-    var $temp = $("<input>");
+    var $temp = $("<textarea />");
     $("body").append($temp);
     $temp.val(text).select();
     document.execCommand("copy");
@@ -289,6 +289,6 @@ function copyToClipboard(text) {
 }
 
 $(document).on('click', '.button', function(){
-    copyToClipboard(share[0].join(''));
-    showMessage(share[0].join(''));
+    copyToClipboard(share[0].join('')+'\n'+share[1].join('')+'\n'+share[2].join(''));
+    showMessage('Results copied to clipboard!');
 });
