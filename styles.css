@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #121213;
+  --bg-color: #8B292A;
   --bg-text: #fff;
   --valid-letter: #3aa131;
   --invalid-letter: #db9641;
@@ -29,7 +29,8 @@ html { box-sizing: border-box; }
    transition: ease-in-out 0.2s; }
 
 body {
-  background: var(--bg-color);
+  background-color: var(--bg-color);
+  background-image: url("imgs/bg.png");
   color: var(--bg-text);
   font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
   min-height: 100vh;
@@ -44,7 +45,6 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
-  border-bottom: 1px solid #FFF;
 }
 
 h1 {
@@ -52,6 +52,7 @@ h1 {
   padding: 0;
   letter-spacing: 2px;
   text-align: center;
+  color: var(--rosa);
   font: 2.5em PiratesBay;
 }
 
@@ -117,7 +118,7 @@ main {
   font-weight: 700;
   font-size: 2rem;
   line-height: 2rem;
-
+  background: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
