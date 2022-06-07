@@ -133,8 +133,7 @@ const checkGuess = (guess, word) => {
     const keyboardKey = document.querySelector(`[data-key='${letter}']`);
 
     if (keyboardKey.getAttribute('data-status') === 'empty') {
-      keyboardKey.setAttribute('data-status', 'none');
-
+      keyboardKey.setAttribute('data-status', 'gray');
     }
   });
 
@@ -158,12 +157,12 @@ const checkGuess = (guess, word) => {
   if (currentWord === WORD_OF_THE_DAY) {
     $('.share').html('CONGRATULACIONES!! <br><br>');
     $('.share').html($('.share').html()+INFO_WON[INDEX_OF_THE_DAY]);
-    $('.hover_won').show();
+    $('.hover_won').fadeIn(3000);
     return;
   } else {
     if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
       $('.share').html('Nice try! But no.');
-      $('.hover_over').show();
+      $('.hover_over').fadeIn(3000);
       return;
     }
   }

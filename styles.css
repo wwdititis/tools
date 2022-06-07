@@ -1,10 +1,11 @@
 :root {
-  --bg-color: #8B292A;
+  --bg-color: #ffd0c3;
   --bg-text: #fff;
-  --valid-letter: #3aa131;
+  --valid-letter: #ff0893;
   --invalid-letter: #db9641;
-  --none-letter: #303030;
-  --filled-letter: #818384;
+  --none-letter: #9b5a337a;
+  --gray-letter: #0000003d;
+  --filled-letter: #ab704c;
   --rosa: #ff0893;
 }
 
@@ -30,7 +31,6 @@ html { box-sizing: border-box; }
 
 body {
   background-color: var(--bg-color);
-  background-image: url("imgs/bg.png");
   color: var(--bg-text);
   font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
   min-height: 100vh;
@@ -52,7 +52,7 @@ h1 {
   padding: 0;
   letter-spacing: 2px;
   text-align: center;
-  color: var(--rosa);
+  color: #000;
   font: 2.5em PiratesBay;
 }
 
@@ -114,15 +114,14 @@ main {
 
 [data-status],
 [data-key] {
-  border: 2px solid #404040;
+  background: #ffffff52;
   font-weight: 700;
   font-size: 2rem;
   line-height: 2rem;
-  background: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
+  border-radius: 0.25rem;
   height: 3rem;
   width: 3rem;
 
@@ -140,14 +139,10 @@ main {
   background: #595959;
   border: none;
   border-radius: 4px;
-
   font-size: 1rem;
-
-  height: 3.8rem;
+  /* height: 3.8rem; */
   width: 2.8rem;
-
   cursor: pointer;
-
   transition: all .3s ease-in-out;
 }
 
@@ -161,10 +156,11 @@ main {
   width: 4rem;
 }
 
-[data-status='filled']      { border: 1px solid var(--filled-letter); }
+[data-status='filled']      { color: #9b613d; border: 2px solid var(--filled-letter); }
 [data-status='valid']       { background: var(--valid-letter); border: none; }
 [data-status='invalid']     { background: var(--invalid-letter); border: none; }
 [data-status='none']        { background: var(--none-letter); border: none; }
+[data-status='gray']        { color: var(--bg-color); background: var(--gray-letter); border: none; }
 
 [data-animation='pop']      { animation: PopIn 100ms; }
 
