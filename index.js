@@ -225,7 +225,7 @@ const onKeyDown = (key) => {
   // We have reached the 5 letter limit for the guess word
   if (currentWord.length >= 5) return;
   if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-    $('.hover_over').show();
+    $('.hover_over').fadeIn(3000);
     return;
   }
 
@@ -314,4 +314,19 @@ $(document).on('click', '.button', function(){
         showMessage('Results copied to clipboard!');
       }
     }
+});
+
+
+
+$(document).on('click', '.popup_help', function(){
+  $('.hover_help').show();
+});
+$(document).on('click', '.hover_help', function(){
+  $('.hover_help').hide();
+});
+$(document).on('click', '.popup_info', function(){
+  $('.hover_info').show();
+});
+$(document).on('click', '.hover_info', function(){
+  $('.hover_info').hide();
 });

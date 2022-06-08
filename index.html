@@ -8,26 +8,7 @@
   <title>Crewdle - An Our Flag Means Death game</title>
   <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
   <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script>
-    $(window).load(function () {
-      $('.popup_help').click(function(){
-         $('.hover_help').show();
-      });
-      $('.hover_help').click(function(){
-          $('.hover_help').hide();
-      });
-      $('.popup_info').click(function(){
-         $('.hover_info').show();
-      });
-      $('.hover_info').click(function(){
-          $('.hover_info').hide();
-      });
-      $('.popupCloseButton').click(function(){
-          $('.hover_help').hide();
-          $('.hover_info').hide();
-      });
-    });
-  </script>
+
 </head>
 <body>
 
@@ -59,8 +40,6 @@
     </div>
 
     <h1>Crewdle</h1>
-    <?php echo "My first PHP script!";
-?>
 
       <a class="popup_info"><ion-icon name="information-circle-outline" size="large"></ion-icon></a>
       <div class="hover_info">
