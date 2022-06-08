@@ -19,6 +19,7 @@ const GUESSES = [
   'STEIN',
   'SWEDE',
   'TAIKA',
+  'TEACH',
   'ZAYRE',
 ];
 
