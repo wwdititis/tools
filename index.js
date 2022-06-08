@@ -316,7 +316,10 @@ $(document).on('click', '.button', function(){
     }
 });
 
-
+window.onkeydown = function (event) {
+  if (event.which == 8) {
+     event.preventDefault();   // turn off browser transition to the previous page
+  }};
 
 $(document).on('click', '.popup_help', function(){
   $('.hover_help').show();
