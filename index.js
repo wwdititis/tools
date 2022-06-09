@@ -330,12 +330,12 @@ $(document).on('click', '.popup_help', function(){
 $(document).on('click', '.hover_help', function(){
   $('.hover_help').hide();
 });
-$(document).on('click', '.popup_info', function(){
-  $('.hover_info').show();
-});
-$(document).on('click', '.hover_info', function(){
-  $('.hover_info').hide();
-});
+// $(document).on('click', '.popup_info', function(){
+//   $('.hover_info').show();
+// });
+// $(document).on('click', '.hover_info', function(){
+//   $('.hover_info').hide();
+// });
 
 
 
