@@ -3,7 +3,13 @@
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
 
-const INDEX_OF_THE_DAY = getRandomIndex(GUESSES.length);
+// Get the day of the month with Date object
+const today = new Date().getDate();
+// And the month to prevent repeats
+const tomonth = new Date().getMonth();
+
+// const INDEX_OF_THE_DAY = getRandomIndex(GUESSES.length);
+const INDEX_OF_THE_DAY = generate_index(GUESSES.length);
 // const lastUpdateTime = new Date().getTime();
 // const index_day;
 
@@ -24,8 +30,6 @@ let currentWord = '';
 
 // Get everything setup and the game responding to user actions.
 const init = () => {
-
-  runOncePerDay();
 
   console.log('👋 Welcome to Crewdle');
 
@@ -277,8 +281,17 @@ document.addEventListener('DOMContentLoaded', init);
 
 // Based on the max length of the Array. Return a random items index
 // within the Array's length.
-function getRandomIndex (maxLength) {
-  return Math.floor(Math.random() * Math.floor(maxLength));
+// function getRandomIndex (maxLength) {
+//   return Math.floor(Math.random() * Math.floor(maxLength));
+// }
+
+function generate_index(maxValue) {
+   // Crazy math stuff
+   let num = Math.round((today+4) / tomonth * 39163).toString();
+
+   // To convert it back to a number, use the + operator before parentheses
+   // Don’t forget to use % on the max value, I just put 31 as a placeholder
+   return +(num[2] + num[3]) % maxValue;
 }
 
 function copyToClipboard(text) {
@@ -324,25 +337,14 @@ $(document).on('click', '.hover_info', function(){
   $('.hover_info').hide();
 });
 
-function hasOneDayPassed() {
-  // get today's date. eg: "7/37/2007"
-  var today = new Date().toLocaleDateString();
-
-  // if there's a date in localstorage and it's equal to the above:
-  // inferring a day has yet to pass since both dates are equal.
-  if ( localStorage.yourapp_date == today ) {
-    return false;
-  }
-  // this portion of logic occurs when a day has passed
-  localStorage.yourapp_date = today;
-  return true;
-}
 
 
-// some function which should run once a day
-function runOncePerDay() {
-  if( !hasOneDayPassed() ) return false;
 
-  // your code below
-  showMessage('sera q funciona');
-}
+
+// // some function which should run once a day
+// function runOncePerDay() {
+//   if( !hasOneDayPassed() ) return false;
+//
+//   // your code below
+//   showMessage('sera q funciona');
+// }
