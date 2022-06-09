@@ -9,11 +9,6 @@
   --rosa: #ff0893;
 }
 
-@font-face {
-  font-family: PiratesBay;
-  src: url('res/piratesbay.ttf');
-}
-
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
@@ -43,9 +38,12 @@ body {
 }
 
 header {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-around;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 0;
+    width: 100%;
+    position: absolute;
 }
 
 h1 {
@@ -65,7 +63,7 @@ h3 {
   color: black;
 }
 main {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -137,7 +135,7 @@ main {
 }
 
 #keyboard {
-  gap: 8px; /* Between each row */
+  /* gap: 8px;  Between each row */
   padding-bottom: 10px;
 }
 
@@ -148,7 +146,7 @@ main {
   border: none;
   border-radius: 4px;
   font-size: 1rem;
-  /* height: 3.8rem; */
+  height: 3.8rem;
   width: 2.8rem;
   cursor: pointer;
   transition: all .3s ease-in-out;
@@ -289,4 +287,9 @@ main {
     width: 30px;
     height: 30px;
     text-align: center;
+}
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
