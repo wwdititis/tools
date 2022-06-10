@@ -34,16 +34,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 2rem;  
+  align-items: center;
 }
 
 header {
     display: inline-flex;
     align-items: center;
     justify-content: space-evenly;
-    top: 0;
     width: 100%;
-    position: absolute;
 }
 
 h1 {
