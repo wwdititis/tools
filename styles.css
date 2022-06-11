@@ -63,6 +63,7 @@ h3 {
 }
 main {
   /* flex-grow: 1; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -287,5 +288,4 @@ main {
     height: 30px;
     text-align: center;
 }
-footer {
-}
+footer { width: 100%; }
