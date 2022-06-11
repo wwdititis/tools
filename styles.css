@@ -234,7 +234,7 @@ main {
     z-index:1;
 }
 
-.hover_help > div, .hover_info > div,
+.hover_help > div, .info,
 .hover_over > div, .share {
     background-color: #444;
     display: inline-block;
@@ -288,4 +288,4 @@ main {
     height: 30px;
     text-align: center;
 }
-footer { width: 100%; }
+footer { padding: 0 10px; width: 100%; }
