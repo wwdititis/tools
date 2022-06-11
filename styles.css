@@ -243,7 +243,7 @@ main {
     min-height: 100px;
     vertical-align: middle;
     width: fit-content;
-    position: relative;
+    position: absolute;
     border-radius: 8px;
     padding: 15px 5%;
 }
