@@ -325,17 +325,17 @@ window.onkeydown = function (event) {
   }};
 
 $(document).on('click', '.popup_help', function(){
-  $('.hover_help').show();
+  $('.hover').show();
 });
-$(document).on('click', '.hover_help', function(){
-  $('.hover_help').hide();
+$(document).on('click', '.hover', function(){
+  $('.hover').hide();
 });
-// $(document).on('click', '.popup_info', function(){
-//   $('.hover_info').show();
-// });
-// $(document).on('click', '.hover_info', function(){
-//   $('.hover_info').hide();
-// });
+$(document).on('click', '.popup_info', function(){
+  $('.hover_info').show();
+});
+$(document).on('click', '.hover_info', function(){
+  $('.hover_info').hide();
+});
 
 
 

@@ -8,16 +8,6 @@
   <title>Crewdle - An Our Flag Means Death game</title>
   <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
   <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script>
-    $(window).load(function () {
-      $('.popup_info').click(function(){
-         $('.hover_info').show();
-      });
-      $('.hover_info').click(function(){
-          $('.hover_info').hide();
-      });
-    });
-  </script>
 </head>
 <body>
 
@@ -32,19 +22,6 @@
     <h3>Play it through as a crew!</h3>
 
       <a class="popup_info"><ion-icon name="information-circle-outline" size="large"></ion-icon></a>
-      <div class="hover_info">
-          <span class="center"></span>
-          <div class="info">
-              <div class="popupCloseButton">&times;</div>
-              <p>
-                This is an 🏴‍☠️ Our Flag Means Death 🏴‍☠️ themed version of the game <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a> <br /><br />
-                Coded by Des <a href="https://twitter.com/teachwaititi">@teachwaititi</a> <br />
-                Name suggestion by <a href="https://twitter.com/Magalag2011">@Magalag2011</a> <br />
-                Based on <a href="https://github.com/bitseek-io/wordle">this</a> open source code <br /><br />
-                Contact <a href="https://twitter.com/teachwaititi">me</a> for bugs and/or suggestions
-              </p>
-          </div>
-      </div>
 
   </header>
 
@@ -59,11 +36,11 @@
     <section id="keyboard">
     </section>
   </footer>
-    <div class="hover_help">
-        <span class="center"></span>
-        <div style="text-align: left;">
+  <div class="hover">
+    <span class="center"></span>
+    <div class="hover_help">        
+        <div class="help" style="text-align: left;">
             <div class="popupCloseButton">&times;</div>
-            <p>
               <center><strong>HOW TO PLAY</strong></center><br /><br />
               Guess the the right word in 6 tries:<br /><br />
               1. Type in your guess <br />
@@ -77,13 +54,23 @@
               The letter <strong>A</strong> is in the word but in the wrong spot<br /><br />
               <img src="imgs/ex3.png">
               Letters in gray <strong>are not</strong> in the word in any spot<br />
-            </p>
         </div>
-    </div>  
+    </div>
+  </div>
+    <div class="hover_info">
+        <span class="center"></span>
+        <div class="info">
+            <div class="popupCloseButton">&times;</div>
+              This is an 🏴‍☠️ Our Flag Means Death 🏴‍☠️ themed version of the game <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a> <br /><br />
+              Coded by Des <a href="https://twitter.com/teachwaititi">@teachwaititi</a> <br />
+              Name suggestion by <a href="https://twitter.com/Magalag2011">@Magalag2011</a> <br />
+              Based on <a href="https://github.com/bitseek-io/wordle">this</a> open source code <br /><br />
+              Contact <a href="https://twitter.com/teachwaititi">me</a> for bugs and/or suggestions
+        </div>
+    </div>
   <div class="hover_over">
         <span class="center"></span>
         <div class="share"></div>
-
         <button class="button">
           <img src="imgs\twitter-icon.png" height="30" width="30">
           Share</button>
