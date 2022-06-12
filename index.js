@@ -149,14 +149,14 @@ const checkGuess = (guess, word) => {
   history.push(currentWord);
 
   if (currentWord === WORD_OF_THE_DAY) {
-    $('.share').html('CONGRATULACIONES!! <br><br>');
+    $('.share').html('CONGRATULACIONES!! <br /><br />');
     $('.share').html($('.share').html()+INFO_WON[INDEX_OF_THE_DAY]);
-    $('.hover_won').fadeIn(3000);
+    $('.hover_game').fadeIn(3000);
     return;
   } else {
     if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-      $('.share').html('Nice try! But no.');
-      $('.hover_over').fadeIn(3000);
+      $('.share').html('Nice try!<br /><br />But no.');
+      $('.hover_game').fadeIn(3000);
       return;
     }
   }
@@ -218,10 +218,11 @@ const onKeyDown = (key) => {
 
   // We have reached the 5 letter limit for the guess word
   if (currentWord.length >= 5) return;
-  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-    $('.hover_over').fadeIn(3000);
-    return;
-  }
+  // if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
+  //   $('.share').html('Nice try! But no.');
+  //   $('.hover_game').fadeIn(3000);
+  //   return;
+  // }
 
   const upperCaseLetter = key.toUpperCase();
 
@@ -327,7 +328,7 @@ window.onkeydown = function (event) {
 $(document).on('click', '.popup_help', function(){
   $('.hover_help').show();
 });
-$(document).on('click', '.hover', function(){
+$(document).on('click', '.hover_help', function(){
   $('.hover_help').hide();
 });
 $(document).on('click', '.popup_info', function(){

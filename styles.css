@@ -219,8 +219,7 @@ main {
     border-radius: 10px;
 }
 
-.hover_info, .hover_help,
-.hover_over, .hover_won {
+.hover_info, .hover_help, .hover_game {
     background:rgba(0,0,0,.4);
     font: 12px monospace;
     cursor:pointer;
@@ -240,13 +239,14 @@ main {
     display: inline-flex;
     flex-direction: column;
     height: auto;
-    
     max-width: 400px;
+    min-width: 150px;
     min-height: 100px;
     vertical-align: middle;
     width: fit-content;
     border-radius: 8px;
     padding: 15px 5%;
+    justify-content: center;
 }
 .button img{
   margin-left: -20px;
