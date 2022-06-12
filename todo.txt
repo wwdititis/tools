@@ -15,6 +15,9 @@ Queerdle
 
 - remove the word after each day
 
+- disable dark mode
+
+- dynamic tiles in how to play
 - wordle link on share
 - Link for suggesting words
 - X button how to fix on div

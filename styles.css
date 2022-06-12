@@ -2,7 +2,7 @@
   --bg-color: #ffd0c3;
   --bg-text: #fff;
   --valid-letter: #ff0893;
-  --invalid-letter: #db9641;
+  --invalid-letter: #ffa230;
   --none-letter: #0000003d;
   --gray-letter: #0000003d;
   --filled-letter: #ab704c;
@@ -55,7 +55,7 @@ h1 {
     font-size: 2em;
 }
 h3 {
-  font-size: 0.75em;
+  font-size: 0.70em;
   font-weight: normal;
   position: absolute;
   top: 35px;
@@ -223,7 +223,7 @@ pointer-events :none;
 }
 
 .hover_info, .hover_help, .hover_game {
-    background:rgba(0,0,0,.4);
+    background:rgba(0,0,0,.6);
     font: 12px monospace;
     cursor:pointer;
     display:none;
@@ -242,7 +242,8 @@ pointer-events :none;
     align-items: center;
 }
 .help, .info, .share {
-    background-color: #444;
+    background-color: var(--bg-color);
+    color: #000;
     display: inline-flex;
     flex-direction: column;
     height: auto;
