@@ -325,10 +325,10 @@ window.onkeydown = function (event) {
   }};
 
 $(document).on('click', '.popup_help', function(){
-  $('.hover').show();
+  $('.hover_help').show();
 });
 $(document).on('click', '.hover', function(){
-  $('.hover').hide();
+  $('.hover_help').hide();
 });
 $(document).on('click', '.popup_info', function(){
   $('.hover_info').show();

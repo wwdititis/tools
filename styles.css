@@ -219,24 +219,7 @@ main {
     border-radius: 10px;
 }
 
-.hover {
-  cursor:pointer;
-  display:none;
-  background:rgba(0,0,0,.4);
-  width: 100%;
-  height: 100%;
-  position:fixed;
-  z-index:1;
-}
-.hover_help{
-  font: 12px monospace;
-  display:flex;
-  position: absolute;
-  color: #fff;
-  text-align:center;
-  top:0;
-}
-.hover_info,
+.hover_info, .hover_help,
 .hover_over, .hover_won {
     background:rgba(0,0,0,.4);
     font: 12px monospace;
@@ -257,6 +240,7 @@ main {
     display: inline-flex;
     flex-direction: column;
     height: auto;
+    
     max-width: 400px;
     min-height: 100px;
     vertical-align: middle;
@@ -283,26 +267,7 @@ main {
   font-weight: bold;
   background-color: #1C9CEA;
 }
-.button:hover {
-  background-color: #53b2ec;
-}
-.center {
-    display:inline-block;
-    height:100%;
-    vertical-align:middle;
-}
-
-.popupCloseButton {
-    cursor: pointer;
-    display: inline-block;
-    font-family: arial;
-    font-weight: bold;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-}
+.button:hover { background-color: #53b2ec; }
+.center { display:inline-block; height:100%;
+    vertical-align:middle; }
 footer { padding: 0 10px; width: 100%; }
