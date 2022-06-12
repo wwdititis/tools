@@ -212,7 +212,10 @@ main {
   }
 }
 
-/* Popup box BEGIN */
+ion-icon {
+pointer-events :none;
+}
+
 .popup_help, .popup_info {
     cursor: pointer;
     height: 32px;
@@ -252,6 +255,13 @@ main {
     padding: 15px 5%;
     justify-content: center;
 }
+.help ol {
+  text-align: left;
+  list-style-type: disclosure-closed;
+  max-width: 270px;
+  padding-left: 30px;
+}
+.help img { width: 200px; }
 .button {
   cursor: pointer;
   display: flex;

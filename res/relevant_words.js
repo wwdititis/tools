@@ -10,6 +10,7 @@ const RELEVANT_WORDS = [
   'CROOK',
   'COAST',
   'CURSE',
+  'DADDY',
   'DEATH',
   'DECKS',
   'FANCY',

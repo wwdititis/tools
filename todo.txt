@@ -1,0 +1,30 @@
+11-6 : JONES
+12-6 : LOUIS
+
+
+
+Queerdle
+
+# Suggest words?
+
+
+
+
+
+***
+
+- remove the word after each day
+
+- wordle link on share
+- Link for suggesting words
+- X button how to fix on div
+
+
+
+
+
+
+
+
+https://teachwaititi.github.io/crewdle/?version=1
+Old School Pattern: https://suspensefulgraphics.tumblr.com/post/20331582022/visualgraphic-old-school

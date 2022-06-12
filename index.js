@@ -155,7 +155,7 @@ const checkGuess = (guess, word) => {
     return;
   } else {
     if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-      $('.share').html('Nice try!<br /><br />But no.');
+      $('.share').html('Good effort, mate!<br /><br />But no.<br /><br /><br />Ps.: try again by refreshing the page 😉');
       $('.hover_game').fadeIn(3000);
       return;
     }

@@ -10,18 +10,13 @@
   <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-
   <header>
-
-    <!-- <img src="imgs/flag_emoji.png" alt="Pirate flag"> -->
-
-    <a class="popup_help"><ion-icon name="help-circle-outline" size="large"></ion-icon></a>
-
+    <a class="popup_help" title="how to play"><ion-icon name="help-circle-outline" size="large"></ion-icon></a>
 
     <h1>Crewdle</h1>
     <h3>Play it through as a crew!</h3>
 
-      <a class="popup_info"><ion-icon name="information-circle-outline" size="large"></ion-icon></a>
+    <a class="popup_info" title="about"><ion-icon name="information-circle-outline" size="large"></ion-icon></a>
 
   </header>
 
@@ -38,20 +33,22 @@
   </footer>
   <div class="hover_help">
     <span class="center"></span>
-        <div class="help" style="text-align: left;">
-              <center><strong>HOW TO PLAY</strong></center><br /><br />
-              Guess the the right word in 6 tries:<br /><br />
-              1. Type in your guess <br />
-              2. Each guess must be a 5 letter word that<br /> is relevant to the OFMD universe <br />
-              3. Hit the enter button to submit <br /><br />
-              After each guess, the color of the tiles<br /> will change to show how close your guess<br /> was to the word.<br /><br />
-              <strong>EXAMPLES</strong><br />
-              <img src="imgs/ex1.png">
-              The letter S is in the word and in<br /> the correct spot<br /><br />
-              <img src="imgs/ex2.png">
-              The letter A is in the word but in<br /> the wrong spot<br /><br />
-              <img src="imgs/ex3.png">
-              Letters in gray are not in <br />the word in any spot<br />
+        <div class="help">
+            <center><strong>HOW TO PLAY</strong></center><br />
+            Guess the the right word in 6 tries:<br />
+            <ol>
+              <li>Type in your guess</li>
+              <li>Each guess must be a 5 letter word relevant to the OFMD universe</li>
+              <li>Hit the enter button to submit</li>
+            </ol>
+            After each guess, the color of the tiles<br /> will change to show how close your guess<br /> was to the word.<br /><br />
+            <strong>EXAMPLES</strong><br />
+            <center><img src="imgs/ex1.png"></center>
+            The letter S is in the word and in<br /> the correct spot<br /><br />
+            <center><img src="imgs/ex2.png"></center>
+            The letter A is in the word but in<br /> the wrong spot<br /><br />
+            <center><img src="imgs/ex3.png"></center>
+            Letters in gray are not in <br />the word in any spot<br />
         </div>
   </div>
   <div class="hover_info">
@@ -71,8 +68,8 @@
     <span class="center"></span>
       <div class="hover_over">
         <div class="share"> </div>
-        <button class="button">
-          <img src="imgs\share-social.png" height="25" width="25">          
+        <button class="button" title="share results">
+          <img src="imgs\share-social.png" height="25" width="25">
           Share
         </button>
     </div>
