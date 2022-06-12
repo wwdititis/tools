@@ -1,6 +1,26 @@
 const GUESSES = [
-  'FLAGS',
-  'MATES',
+  'BORIS',
+  'CRANE',
+  'DAVID',
+  'DARBY',
+  'ELIZA',
+  'FAXON',
+  'FRIAS',
+  'HANDS',
+  'JONES',
+  'LOUIS',
+  'NACHO',
+  'NAIRN',
+  'NIGEL',
+  'ORTIZ',
+  'ROACH',
+  'SAMBA',
+  'STEDE',
+  'STEIN',
+  'SWEDE',
+  'TAIKA',
+  'TEACH',
+  'ZAYRE',
 ];
 
 const INFO_WON = [

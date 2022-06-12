@@ -264,6 +264,8 @@ main {
   font-weight: bold;
   margin-top: 30px;
   background-color: #1C9CEA;
+  gap: 10px;
+  flex-direction: row-reverse;
 }
 .button img{
 

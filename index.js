@@ -337,15 +337,3 @@ $(document).on('click', '.popup_info', function(){
 $(document).on('click', '.hover_info', function(){
   $('.hover_info').hide();
 });
-
-
-
-
-
-// // some function which should run once a day
-// function runOncePerDay() {
-//   if( !hasOneDayPassed() ) return false;
-//
-//   // your code below
-//   showMessage('sera q funciona');
-// }
