@@ -149,13 +149,13 @@ const checkGuess = (guess, word) => {
   history.push(currentWord);
 
   if (currentWord === WORD_OF_THE_DAY) {
-    $('.share').html('CONGRATULACIONES!! <br /><br />');
+    $('.share').html('You did it! <br />Huzzah!!<br />');
     $('.share').html($('.share').html()+INFO_WON[INDEX_OF_THE_DAY]);
     $('.hover_game').fadeIn(3000);
     return;
   } else {
     if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-      $('.share').html('Good effort, mate!<br /><br />But no.<br /><br /><br />Ps.: try again by refreshing the page 😉');
+      $('.share').html('Nice one, mate!<br /><br />But no.<br /><br /><br />Ps.: try again by refreshing the page 😉');
       $('.hover_game').fadeIn(3000);
       return;
     }
@@ -314,7 +314,7 @@ $(document).on('click', '.button', function(){
       showMessage('Results copied to clipboard!');
     } else {
       if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-        copyToClipboard('🏴‍☠️ Crewdle 🍊 X/'+MAX_NUMBER_OF_ATTEMPTS+'\n\n'+copy);
+        copyToClipboard('🏴‍☠️ Crewdle 🍊 X/'+MAX_NUMBER_OF_ATTEMPTS+'\n\n'+copy+'https://crewdle.netlify.app');
         showMessage('Results copied to clipboard!');
       }
     }

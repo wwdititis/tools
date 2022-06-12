@@ -279,10 +279,8 @@ pointer-events :none;
   gap: 10px;
   flex-direction: row-reverse;
 }
-.button img{
-
-}
+.suggest{ font-size: 0.70em; text-decoration: underline; }
 .button:hover { background-color: #53b2ec; }
 .center { display:inline-block; height:100%;
     vertical-align:middle; }
-footer { padding: 0 10px; width: 100%; }
+footer { padding: 0 10px 10px; width: 100%; }
