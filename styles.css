@@ -260,6 +260,7 @@ pointer-events :none;
   list-style-type: disclosure-closed;
   max-width: 270px;
   padding-left: 30px;
+  line-height: 15px;
 }
 .help img { width: 200px; }
 .button {
