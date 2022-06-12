@@ -1,4 +1,5 @@
 :root {
+  color-scheme: only light;
   --bg-color: #ffd0c3;
   --bg-text: #fff;
   --valid-letter: #ff0893;
@@ -14,13 +15,12 @@ html { box-sizing: border-box; }
 
  a:link, a:visited {
    background-color: none;
-   color: #999;
+   color: #ff6e6e;
    text-decoration: none;
    transition: ease-in-out 0.2s;
    }
 
  a:hover, a:active {
-   background-color: #8a8787;
    color: #000;
    transition: ease-in-out 0.2s; }
 
@@ -243,7 +243,7 @@ pointer-events :none;
 }
 .help, .info, .share {
     background-color: var(--bg-color);
-    color: #000;
+    color: #323232;
     display: inline-flex;
     flex-direction: column;
     height: auto;
