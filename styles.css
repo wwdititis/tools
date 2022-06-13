@@ -240,6 +240,8 @@ pointer-events :none;
     flex-direction: column;
     align-content: center;
     align-items: center;
+    position: relative;
+    bottom: 100px;
 }
 .help, .info, .share {
     background-color: var(--bg-color);

@@ -47,6 +47,12 @@ const init = () => {
   document.addEventListener('keydown', event => onKeyDown(event.key));
   gameBoard.addEventListener('animationend', event => event.target.setAttribute('data-animation', 'idle'));
   keyboard.addEventListener('click', onKeyboardButtonClick);
+  // if (typeof localStorage.length !== 'undefined') {
+  //   for (i=0; i < localStorage.length; i++) {
+  //     onKeyDown(key);
+  //     onKeyDown(ENTER_KEY);
+  //   }
+  // }
 }
 
 const showMessage = (message) => {
@@ -148,6 +154,8 @@ const checkGuess = (guess, word) => {
 
   history.push(currentWord);
 
+  localStorage.setItem(history.length, currentWord);
+
   if (currentWord === WORD_OF_THE_DAY) {
     $('.share').html('You did it! <br />Huzzah!!<br />');
     $('.share').html($('.share').html()+INFO_WON[INDEX_OF_THE_DAY]);
@@ -212,7 +220,6 @@ const onKeyDown = (key) => {
       currentRow.setAttribute('data-animation', 'invalid');
       showMessage('That\'s not a relevant word in the OFMD universe...');
     }
-
     return;
   }
 
@@ -310,11 +317,11 @@ $(document).on('click', '.button', function(){
       copy += share[v].join('')+'\n'
     }
     if (currentWord === WORD_OF_THE_DAY) {
-      copyToClipboard('🏴‍☠️ Crewdle '+history.length+'/'+MAX_NUMBER_OF_ATTEMPTS+' 🍊\n\n'+copy);
+      copyToClipboard('🏴‍☠️ Crewdle '+history.length+'/'+MAX_NUMBER_OF_ATTEMPTS+' 🍊\n\n'+copy+'crewdle.netlify.app');
       showMessage('Results copied to clipboard!');
     } else {
       if (history.length >= MAX_NUMBER_OF_ATTEMPTS) {
-        copyToClipboard('🏴‍☠️ Crewdle 🍊 X/'+MAX_NUMBER_OF_ATTEMPTS+'\n\n'+copy+'https://crewdle.netlify.app');
+        copyToClipboard('🏴‍☠️ Crewdle 🍊 X/'+MAX_NUMBER_OF_ATTEMPTS+'\n\n'+copy+'crewdle.netlify.app');
         showMessage('Results copied to clipboard!');
       }
     }
