@@ -50,7 +50,7 @@ const init = () => {
   // if (typeof localStorage.length !== 'undefined') {
   //   for (i=0; i < localStorage.length; i++) {
   //     onKeyDown(key);
-  //     onKeyDown(ENTER_KEY);
+  //     onKeyDown();
   //   }
   // }
 }
@@ -136,17 +136,32 @@ const checkGuess = (guess, word) => {
       keyboardKey.setAttribute('data-status', 'gray');
     }
   });
+// WORKS!
+  // for (var l = 0; l < 5; l++) {
+  //   for (var c = 0; c < 5; c++) {
+  //     if ((guessLetters[l] === wordLetters[c]) && (l !== c)) {
+  //       pos = l;
+  //     }
+  //     if ((guessLetters[l] === wordLetters[c]) && (l === c)) {
+  //       share[history.length][l] = '🟩'; //valid
+  //     }
+  //   }
+  //   if (pos !== 0) {
+  //       share[history.length][pos] = '🟧'; //invalid
+  //   }
+  //   pos = 0;
+  // }
 
   for (var l = 0; l < 5; l++) {
     for (var c = 0; c < 5; c++) {
-      if ((guessLetters[l] === wordLetters[c]) && (l !== c)) {
-        pos = l;
-      }
       if ((guessLetters[l] === wordLetters[c]) && (l === c)) {
         share[history.length][l] = '🟩'; //valid
-      }
+      } else {
+      if ((guessLetters[l] === wordLetters[c]) && (l !== c)) {
+        pos = l;
+      }}
     }
-    if (pos !== 0) {
+    if ((pos !== 0) && (share[history.length][pos] !== '🟩')) {
         share[history.length][pos] = '🟧'; //invalid
     }
     pos = 0;
@@ -154,7 +169,8 @@ const checkGuess = (guess, word) => {
 
   history.push(currentWord);
 
-  localStorage.setItem(history.length, currentWord);
+  // localStorage.setItem(history.length, currentWord);
+  // localStorage.clear();
 
   if (currentWord === WORD_OF_THE_DAY) {
     $('.share').html('You did it! <br />Huzzah!!<br />');
@@ -204,7 +220,7 @@ const onKeyDown = (key) => {
 
     // Remove the last letter from the currentWord
     currentWord = currentWord.slice(0, -1);
-    //if (currentWord === null) return;
+    if (currentWord === null) return;
     return;
   }
 
