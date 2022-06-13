@@ -1,17 +1,15 @@
 12-6 : JONES
+13-6 : TAIKA
 
 
 
 
 ***
 
-- remove the word after each day
 
-- disable dark mode
-- remember input + try again option that clears things
 
-- dynamic tiles in how to play
-- X button how to fix on div
+
+
 
 
 
