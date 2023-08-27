@@ -3,28 +3,40 @@
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
 
-// In case we want to make the game difficult or easier +1 que LINHAS
-const MAX_NUMBER_OF_ATTEMPTS = 5;
-
-// document.cookie = "username=John Doe";
-// let x = document.cookie;
-// console.log(x);
-
-function setCookie(cname, cvalue, exdays) {
+function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";" + ";path=/";
 }
 
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 
-let COLUNAS = 3; let LINHAS = 3; //TAMANHO DA GRID
+
+setCookie("cols",getCookie("cols")); setCookie("lins",getCookie("lins")); console.log(document.cookie);
+
+const COLUNAS = getCookie("cols"); const LINHAS = getCookie("lins"); //TAMANHO DA GRID
+const MAX_NUMBER_OF_ATTEMPTS = LINHAS;
 
 const history = [];
 let CURRENTLINE = '';
 
-function generateGrid() {
+function generate() {  
   var cols = document.getElementById("cols").value;
   var lins = document.getElementById("lins").value;
-  let COLUNAS = cols; let LINHAS = lins; //TAMANHO DA GRID
-  
+  setCookie("cols",cols); setCookie("lins",lins);
+  window.location.reload()
 }
 
 
@@ -33,9 +45,6 @@ function generateGrid() {
 const init = () => {
 
   console.log('🧠 Vamos treinar a mente! 💪');
-
-
-
 
   const KEYBOARD_KEYS = ['GVP', 'YOB', ''];
 

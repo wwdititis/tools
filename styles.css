@@ -135,11 +135,7 @@ main {
   user-select: none;
 }
 
-#keyboard {
-  /* gap: 8px;  Between each row */
-  padding-bottom: 10px;
-}
-
+#keyboard { margin-top: 1rem; }
 #keyboard ul { justify-content: center; }
 
 [data-key] {
@@ -152,6 +148,9 @@ main {
   cursor: pointer;
   transition: all .3s ease-in-out;
 }
+
+[data-key]:hover { 
+  border: 2px solid white; }
 
 [data-key='Enter'] { width: 6rem; }
 
@@ -218,9 +217,7 @@ main {
   }
 }
 
-ion-icon {
-pointer-events :none;
-}
+ion-icon { pointer-events :none; }
 
 .popup_help, .popup_info {
     cursor: pointer;

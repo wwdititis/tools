@@ -23,16 +23,20 @@
   <main>
     <section id="board"></section>
     <section id="settings">
-      <button type="button" onClick="window.location.reload()">De novo!</button>
+      <input type="number" id="cols" placeholder="colunas" min="3" max="5" value="3">
+      <input type="number" id="lins" placeholder="linhas" min="3" max="5" value="3">
+      <button type="button" id="gerar" onClick="generateGrid()">Gerar</button>
+      <button type="button" id="denovo" onClick="window.location.reload()">De novo!</button>
     </section>    
+    <section id="keyboard"></section>  
   </main>
-  <div class="toaster">
-    <ul></ul>
-  </div>
-  <footer>
-    <section id="keyboard"></section>    
+
+  <div class="toaster"> <ul></ul> </div>
+
+  <footer>      
     <!-- <center><div class="suggest"><a href="https://forms.gle/K4Moqi1UyrScxVq39" target="_blank">suggest words</a></span></center> -->
   </footer>
+
   <div class="hover_help">
     <span class="center"></span>
         <div class="help">
@@ -55,6 +59,7 @@
             Letters in brown are not in <br />the word in any spot<br />
         </div>
   </div>
+
   <div class="hover_info">
         <span class="center"></span>
         <div class="info">
@@ -79,9 +84,7 @@
           Share
         </button>
     </div>
-  </div>
-  <script type="text/javascript" src="res/relevant_words.js"></script>
-  <script type="text/javascript" src="res/guesses.js"></script>
+  </div> 
   <script type="text/javascript" src="index.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
