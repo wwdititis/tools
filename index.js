@@ -3,39 +3,24 @@
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
 
-// In case we want to make the game difficult or easier +1 que LINHAS
-const MAX_NUMBER_OF_ATTEMPTS = 5;
-
-// document.cookie = "username=John Doe";
-// let x = document.cookie;
-// console.log(x);
-
-function setCookie(cname, cvalue, exdays) {
-  document.cookie = cname + "=" + cvalue + ";" + ";path=/";
-}
-
-
-let COLUNAS = 3; let LINHAS = 3; //TAMANHO DA GRID
+const MAX_NUMBER_OF_ATTEMPTS = 4; // +1 que LINHAS
+const COLUNAS = 3; const LINHAS = 3; //TAMANHO DA GRID
 
 const history = [];
 let CURRENTLINE = '';
 
-function generateGrid() {
-  var cols = document.getElementById("cols").value;
-  var lins = document.getElementById("lins").value;
-  let COLUNAS = cols; let LINHAS = lins; //TAMANHO DA GRID
+// function generateGrid() {
+//   var cols = document.getElementById("cols").value;
+//   var lins = document.getElementById("lins").value;
+//   let COLUNAS = cols; let LINHAS = lins; //TAMANHO DA GRID
   
-}
-
+// }
 
 
 // Get everything setup and the game responding to user actions.
-const init = () => {
+const draw = () => {
 
   console.log('🧠 Vamos treinar a mente! 💪');
-
-
-
 
   const KEYBOARD_KEYS = ['GVP', 'YOB', ''];
 
@@ -111,18 +96,15 @@ const onKeyDown = (key) => {
   if (key === ENTER_KEY) {
     if (CURRENTLINE.length < COLUNAS) { return; }
     if (CURRENTLINE.length === COLUNAS) {
-      nextLine(CURRENTLINE);
-    } 
+      nextLine(CURRENTLINE); } 
     return;
   }
 
   // We have reached the letter limit for the guess word
   if (CURRENTLINE.length >= COLUNAS) return;
 
-  const upperCaseLetter = key.toUpperCase();
-
   // On key press add the letter to the next empty column
-  CURRENTLINE += upperCaseLetter;
+  CURRENTLINE += key;
 
    switch(key) {
     case ("G"):
@@ -216,7 +198,7 @@ const generateBoard = (board, rows = LINHAS, columns = COLUNAS, keys = [], keybo
 
 // Call the initialization function when the DOM is loaded to get
 // everything setup and the game responding to user actions.
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', draw);
 
 
 $(document).on('click', '.popup_help', function(){

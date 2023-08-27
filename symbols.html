@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>HiiT Mental</title>
+  <!-- <link rel="icon" type="image/x-icon" href="imgs/favicon.ico"> -->
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+  <header>
+    <a class="popup_help" title="how to play"><ion-icon name="help-circle-outline" size="large"></ion-icon></a>
+
+    <h1>HiiT Mental</h1>
+    <h3>Treino e reabilitação cognitiva</h3>
+
+    <a class="popup_info" title="about"><ion-icon name="information-circle-outline" size="large"></ion-icon></a>
+
+  </header>
+
+  <main>
+    <section id="board"></section>
+    <section id="settings">
+      <!-- <input type="number" id="cols" placeholder="colunas" min="3" max="5" value="3">
+      <input type="number" id="lins" placeholder="linhas" min="3" max="5" value="3">
+      <button type="button" id="gerar" onClick="generateGrid()">Gerar</button> -->
+      <a href="index.html">
+        <button type="button" id="denovo">De novo!</button>
+      </a>
+    </section>    
+    <section id="keyboard"></section>  
+  </main>
+
+  <div class="toaster"> <ul></ul> </div>
+
+  <footer>      
+    <!-- <center><div class="suggest"><a href="https://forms.gle/K4Moqi1UyrScxVq39" target="_blank">suggest words</a></span></center> -->
+  </footer>
+
+  <div class="hover_help">
+    <span class="center"></span>
+        <div class="help">
+            <center><strong>HOW TO PLAY</strong></center><br />
+            Guess the name of our OFMD<br />cast & crew in 6 tries:<br />
+            <ol>
+              <li>Type in your guess</li>
+              <li>Each guess must be a 5 letter word relevant to the OFMD universe</li>
+              <li>Hit the enter button to submit</li>
+            </ol>
+            After each guess, the color of the<br />
+            tiles will change to show how close<br />
+            your guess was to the right word.<br /><br />
+            <strong>EXAMPLES</strong><br />
+            <center><img src="imgs/ex1.png"></center>
+            Letters in pink are in the word<br />and in the correct spot<br /><br />
+            <center><img src="imgs/ex2.png"></center>
+            Letters in orange are in the word<br />but in the wrong spot<br /><br />
+            <center><img src="imgs/ex3.png"></center>
+            Letters in brown are not in <br />the word in any spot<br />
+        </div>
+  </div>
+
+  <div class="hover_info">
+        <span class="center"></span>
+        <div class="info">
+          <p>
+          This is an 🏴‍☠️ Our Flag Means Death 🏴‍☠️ <br />
+          themed version of the game <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a> <br /><br />
+          Coded by Des <a href="https://twitter.com/teachwaititi">@teachwaititi</a> <br />
+          Name suggestion by <a href="https://twitter.com/Magalag2011">@Magalag2011</a> <br />
+          Based on <a href="https://github.com/bitseek-io/wordle">this</a> open source code <br /><br />
+          Contact <a href="https://twitter.com/teachwaititi">me</a> for bugs and/or suggestions
+          <br /><br />
+          Dark mode and acessible themes soon!
+        </p>
+        </div>
+  </div>
+  <div class="hover_game">
+    <span class="center"></span>
+      <div class="hover_over">
+        <div class="share"> </div>
+        <button class="button" title="share results">
+          <img src="imgs\share-social.png" height="25" width="25">
+          Share
+        </button>
+    </div>
+  </div> 
+  <script type="text/javascript" src="index.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
