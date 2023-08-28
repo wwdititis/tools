@@ -225,7 +225,7 @@ ion-icon { pointer-events :none; }
     border-radius: 10px;
 }
 
-.hover_info, .hover_help, .hover_game {
+.hover_info, .hover_help, .hover_game, .goplay {
     background:rgba(0,0,0,.6);
     font: 12px monospace;
     cursor:pointer;
@@ -246,7 +246,7 @@ ion-icon { pointer-events :none; }
     position: relative;
     bottom: 125px;
 }
-.help, .info, .share {
+.help, .info, .share, .play {
     background-color: var(--bg-color);
     color: #323232;
     display: inline-flex;
@@ -290,3 +290,20 @@ ion-icon { pointer-events :none; }
 .center { display:inline-block; height:100%;
     vertical-align:middle; }
 footer { padding: 0 10px 10px; width: 100%; }
+
+#settings {
+  position: absolute;
+  left: 1rem;
+  top: 30%;
+}
+
+#options {
+  position: absolute;
+  right: 1rem;
+  top: 30%;
+}
+
+.settings, .options {
+  display: flex;
+  flex-direction: column;
+}
