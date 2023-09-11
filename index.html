@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <title>HiiT Mental</title>
   <!-- <link rel="icon" type="image/x-icon" href="imgs/favicon.ico"> -->
-  <link rel="stylesheet" type="text/css" href="symbols.css" />
+  <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
 <body>
   <header>
@@ -21,29 +21,20 @@
   </header>
 
   <main>
-    <section id="board"></section>
+    <section id="dateGrid"></section>
+    <section id="settings">
+      <!-- <input type="number" id="cols" placeholder="colunas" min="3" max="5" value="3">
+      <input type="number" id="lins" placeholder="linhas" min="3" max="5" value="3">
+      <button type="button" id="gerar" onClick="generateGrid()">Gerar</button> -->
+
+      <button type="button" id="random" onClick="goRandom()">Aleatório</button>
+
+      <a href="symbols.html"> Símbolos </a>
+      <a href="colors.html"> DE NOVO </a>
+
+    </section>    
     <section id="keyboard"></section>  
   </main>
-
-  <section id="settings">
-    <div class="settings">
-    <!-- <input type="number" id="cols" placeholder="colunas" min="3" max="5" value="3">
-    <input type="number" id="lins" placeholder="linhas" min="3" max="5" value="3">
-    <button type="button" id="gerar" onClick="generateGrid()">Gerar</button> -->
-    <p>Configurar:</p>
-    <button type="button" id="random" onClick="goRandom()">Aleatório</button>
-    <button type="button" id="goplay">GO!</button>
-    
-    <a href="colors.html"> Cores </a>
-    <a href="symbols.html"><button type="button" id="limpar">LIMPAR</button></a>
-    </div>    
-  </section>    
-
-  <section id="options">
-    <div class="options">
-      <p>Opções:</p>
-    </div>    
-  </section>   
 
   <div class="toaster"> <ul></ul> </div>
 
@@ -51,7 +42,7 @@
     <!-- <center><div class="suggest"><a href="https://forms.gle/K4Moqi1UyrScxVq39" target="_blank">suggest words</a></span></center> -->
   </footer>
 
-<!-- <div class="hover_help">
+  <!-- <div class="hover_help">
     <span class="center"></span>
         <div class="help">
             <center><strong>HOW TO PLAY</strong></center><br />
@@ -72,9 +63,9 @@
             <center><img src="imgs/ex3.png"></center>
             Letters in brown are not in <br />the word in any spot<br />
         </div>
-  </div>
+  </div> -->
 
-  <div class="hover_info">
+  <!-- <div class="hover_info">
         <span class="center"></span>
         <div class="info">
           <p>
@@ -88,15 +79,18 @@
           Dark mode and acessible themes soon!
         </p>
         </div>
-  </div> 
--->
-  <div class="goplay">
+  </div> -->
+  <div class="hover_game">
     <span class="center"></span>
-    <div class="play">
-      <p>    GOOOOOOOOOOOOO    </p>
+      <div class="hover_over">
+        <div class="share"> </div>
+        <button class="button" title="share results">
+          <img src="imgs\share-social.png" height="25" width="25">
+          Share
+        </button>
     </div>
-</div> 
-  <script type="text/javascript" src="symbols.js"></script>
+  </div> 
+  <script type="text/javascript" src="index.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

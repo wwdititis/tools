@@ -3,57 +3,50 @@
 const BACKSPACE_KEY = 'Backspace';
 const ENTER_KEY = 'Enter';
 
-const MAX_NUMBER_OF_ATTEMPTS = 4; // +1 que LINHAS
-const COLUNAS = 3; const LINHAS = 3; //TAMANHO DA GRID
+const COLUNAS = 10; const LINHAS = 1; //TAMANHO DA GRID
 
-const history = [];
-let CURRENTLINE = '';
-
-// function generateGrid() {
-//   var cols = document.getElementById("cols").value;
-//   var lins = document.getElementById("lins").value;
-//   let COLUNAS = cols; let LINHAS = lins; //TAMANHO DA GRID
-  
-// }
-
+const workingDate = [];
+let sCURRENTLINE = '';
 
 // Get everything setup and the game responding to user actions.
 const draw = () => {
 
   console.log('🧠 Vamos treinar a mente! 💪');
 
-  const KEYBOARD_KEYS = ['GVP', 'YOB', ''];
+  const GRID_KEYS = ['00/00/0000'];
+  const NUMPAD_KEYS = ['123', '456', '789','000','000'];
 
-  // Grab the gameboard and the keyboard
-  const gameBoard = document.querySelector('#board');
-  const keyboard = document.querySelector('#keyboard');
+  // Grab the dateGrid and the numPad
+  const dateGrid = document.querySelector('#dateGrid');
+  const numPad = document.querySelector('#keyboard');
 
-  // Generate the gameboard and the keyboard
-  generateBoard(gameBoard);
-  generateBoard(keyboard, 3, 3, KEYBOARD_KEYS, true);  
+  // generate date grid
+  generateBoard(dateGrid, LINHAS, COLUNAS, GRID_KEYS, false);
+  // generate numbers pad keyboard
+  generateBoard(numPad, 3, 5, NUMPAD_KEYS, true);  
 
   // Setup event listeners
   // document.addEventListener('keydown', event => onKeyDown(event.key));
-  gameBoard.addEventListener('animationend', event => event.target.setAttribute('data-animation', 'idle'));
-  keyboard.addEventListener('click', onKeyboardButtonClick);
+  dateGrid.addEventListener('animationend', event => event.target.setAttribute('data-animation', 'idle'));
+  numPad.addEventListener('click', onKeyboardButtonClick);
 
 }
 
-const nextLine = (current_line) => {
+// what to do when ENTER is pressed and date is full
+const onEnter = (current_line) => {
 
   // Find the current active row
-  const currentRow = document.querySelector(`#board ul[data-row='${history.length}']`);
+  const currentRow = document.querySelector(`#dateGrid ul[data-row='0']`);
 
   // First, let's get all the columns in the current row set up with some base values
   currentRow.querySelectorAll('li').forEach((element, index) => {  
     element.setAttribute('data-animation', 'flip');
-    // Each letter should start its animation twice as late as the letter before it
-    element.style.animationDelay = `${index * 300}ms`;
-    element.style.transitionDelay = `${index * 400}ms`;
+    // animation of board after ENTER press
+    element.style.transitionDelay = `${index * 300}ms`;
   });
 
-  history.push(CURRENTLINE);
-  CURRENTLINE = '';
+  workingDate = Array.from(sCURRENTLINE);
+
 }
 
 const onKeyboardButtonClick = (event) => {
@@ -63,11 +56,9 @@ const onKeyboardButtonClick = (event) => {
 }
 
 const onKeyDown = (key) => {
-  // Don't allow more then 6 attempts to guess the word
-  if (history.length >= MAX_NUMBER_OF_ATTEMPTS) return;
 
-  // Find the current active row
-  const currentRow = document.querySelector(`#board ul[data-row='${history.length}']`);
+  // Find board row
+  const currentRow = document.querySelector(`#dateGrid ul[data-row='0']`);
 
   // Find the next empty column in the current active row
   let targetColumn = currentRow.querySelector('[data-status="empty"]');
@@ -82,62 +73,37 @@ const onKeyDown = (key) => {
       // so we always have have a column to operate on
       targetColumn = targetColumn.previousElementSibling ?? targetColumn;
     }
-
     // Clear the column of its content
     targetColumn.textContent = '';
     targetColumn.setAttribute('data-status', 'empty');
-
     // Remove the last letter from the CURRENTLINE
-    CURRENTLINE = CURRENTLINE.slice(0, -1);
-    if (CURRENTLINE === null) return;
+    sCURRENTLINE = sCURRENTLINE.slice(0, -1);
+    if (sCURRENTLINE === null) return;
     return;
   }
 
   if (key === ENTER_KEY) {
-    if (CURRENTLINE.length < COLUNAS) { return; }
-    if (CURRENTLINE.length === COLUNAS) {
-      nextLine(CURRENTLINE); } 
+    if (sCURRENTLINE.length < COLUNAS) { return; }
+    if (sCURRENTLINE.length === COLUNAS) {
+      // only calls ENTER if full date
+      onEnter(sCURRENTLINE); } 
     return;
   }
 
   // We have reached the letter limit for the guess word
-  if (CURRENTLINE.length >= COLUNAS) return;
+  if (sCURRENTLINE.length >= COLUNAS) return;
 
-  // On key press add the letter to the next empty column
-  CURRENTLINE += key;
-
-   switch(key) {
-    case ("G"):
-      targetColumn.setAttribute('data-status', 'green');
-      targetColumn.setAttribute('data-animation', 'pop');
-      break;
-    case ("V"):
-        targetColumn.setAttribute('data-status', 'vermelho');
-        targetColumn.setAttribute('data-animation', 'pop');
-    break;    
-    case ("P"):
-      targetColumn.setAttribute('data-status', 'pink');
-      targetColumn.setAttribute('data-animation', 'pop');
-      break;
-    case ("Y"):
-      targetColumn.setAttribute('data-status', 'yellow');
-      targetColumn.setAttribute('data-animation', 'pop');
-      break;
-    case ("O"):
-      targetColumn.setAttribute('data-status', 'orange');
-      targetColumn.setAttribute('data-animation', 'pop');
-     break;      
-    case ("B"):
-      targetColumn.setAttribute('data-status', 'blue');
-      targetColumn.setAttribute('data-animation', 'pop');
-    break;     
-    default:
-      targetColumn.setAttribute('data-status', 'filled');
-      targetColumn.setAttribute('data-animation', 'pop');
-    }
+  // onkey press populate curretline
+  sCURRENTLINE += key;
+  // On key press add the key to the next empty column
+  if (!isNaN(key)) {
+    targetColumn.setAttribute('data-status', 'green');
+    targetColumn.setAttribute('data-animation', 'pop');
+    targetColumn.textContent = key;
+  }
 }
 
-const generateBoard = (board, rows = LINHAS, columns = COLUNAS, keys = [], keyboard = false) => {
+const generateBoard = (board, rows = LINHAS, columns = COLUNAS, keys = [], numPad = false) => {
   for (let row = 0; row < rows; row++) {
     const elmRow = document.createElement('ul');
 
@@ -147,35 +113,16 @@ const generateBoard = (board, rows = LINHAS, columns = COLUNAS, keys = [], keybo
       const elmColumn = document.createElement('li');
       elmColumn.setAttribute('data-status', 'empty');
       elmColumn.setAttribute('data-animation', 'idle');
+      elmColumn.textContent = keys[row].charAt(column);
 
-      if (keyboard && keys.length > 0) {
+      if (numPad && keys.length > 0) {
         const key = keys[row].charAt(column);
         elmColumn.textContent = key;
         elmColumn.setAttribute('data-key', key);
-        switch(key) {
-          case ("G"):
-            elmColumn.setAttribute('data-status', 'green');    
-            break;
-          case ("V"):
-            elmColumn.setAttribute('data-status', 'vermelho');
-            break;    
-          case ("P"):
-            elmColumn.setAttribute('data-status', 'pink');
-            break;
-          case ("Y"):
-            elmColumn.setAttribute('data-status', 'yellow');
-            break;
-          case ("O"):
-            elmColumn.setAttribute('data-status', 'orange');
-            break;      
-          case ("B"):
-            elmColumn.setAttribute('data-status', 'blue');
-            break;         
-          }
       }
 
-      // Skip adding any keyboard keys to the UI that are empty
-      if (keyboard && elmColumn.textContent === '') continue;
+      // Skip adding any empty keys to the UI
+      if (numPad && elmColumn.textContent === '') continue;
 
       elmRow.appendChild(elmColumn);
     }
@@ -183,7 +130,7 @@ const generateBoard = (board, rows = LINHAS, columns = COLUNAS, keys = [], keybo
     board.appendChild(elmRow);
   }
 
-  if (keyboard) {
+  if (numPad) {
     const enterKey = document.createElement('li');
     enterKey.setAttribute('data-key', ENTER_KEY);
     enterKey.textContent = ENTER_KEY;
